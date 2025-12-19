@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="YuRocket favicon - YR monogram">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FED38B"/>
+      <stop offset="100%" stop-color="#FEA83F"/>
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="464" height="464" rx="112" ry="112" fill="url(#g2)" stroke="#F59E0B" stroke-opacity=".25"/>
+  <text x="256" y="298" font-family="Inter, Poppins, Segoe UI, Helvetica, Arial, system-ui, sans-serif"
+        font-size="250" font-weight="900" text-anchor="middle" dominant-baseline="middle"
+        fill="#111111">
+    Y<tspan fill="#FFFFFF">u</tspan>
+  </text>
+</svg>

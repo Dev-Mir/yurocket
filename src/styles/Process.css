@@ -1,0 +1,169 @@
+/* Section shell */
+.process {
+  padding: 36px 20px;
+  background: #fffaf2;
+}
+
+.process__inner {
+  max-width: 1100px;
+  /* margin-bottom: 100px; */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.process__title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #111;
+  position: relative;
+  display: inline-block; /* so the underline matches the text width */
+}
+
+/* hidden underline by default */
+.process__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;              /* distance under the text */
+  width: 100%;               /* full width of the heading text */
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #FEBC5E, #FEBC5E);
+  transform-origin: center;
+  transform: scaleX(0);      /* invisible initially */
+  transition: transform 0.25s ease-in-out;
+}
+
+/* show underline on hover */
+.process__title:hover::after {
+  transform: scaleX(1);
+}
+
+
+.process__subtitle {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.process__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Card */
+.process-card {
+  position: relative;
+  padding: 28px 24px 30px;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.process-card::before {
+  content: "";
+  position: absolute;
+  inset: auto 12% -18px 12%;
+  height: 22px;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 179, 71, 0.25),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.08);
+}
+
+.process-card:hover::before {
+  opacity: 1;
+}
+
+/* Step badge top-right */
+.process-card__badge {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #996822;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Icon block */
+.process-card__icon-wrap {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 18px;
+  border-radius: 24px;
+  background: #fff4df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 16px;
+  background: #ffe0b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FEBC5E;
+  font-size: 22px;
+}
+
+/* Title + text */
+.process-card__title {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 8px 0 6px;
+  color: #111;
+}
+
+.process-card__underline {
+  width: 40px;
+  height: 3px;
+  border-radius: 999px;
+  background: #FEBC5E;
+  margin-bottom: 10px;
+}
+
+.process-card__text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .process__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .process__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card {
+    align-items: center;
+  }
+}
