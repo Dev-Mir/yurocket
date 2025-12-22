@@ -1,99 +1,132 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { scroller } from "react-scroll";
-import { FaEnvelope, FaLinkedin } from "react-icons/fa";
 import "../styles/Footer.css";
+import { FaEnvelope, FaLinkedin } from "react-icons/fa";
+
+const SECTION_TO_PATH = {
+  home: "/",
+  services: "/services",
+  process: "/process",
+  results: "/results",
+  package: "/offer", // homepage section id="package" -> URL /offer
+  faq: "/faq",
+  "growth-cta": "/results", // CTA is inside Results section
+};
+
+const HOME_SECTION_ROUTES = new Set(Object.values(SECTION_TO_PATH));
 
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const isHomeSectionRoute = HOME_SECTION_ROUTES.has(location.pathname);
+
   const goToSection = (id, offset = -80) => {
-    // If not on homepage, go to "/" first, then HomePage will scroll
-    if (location.pathname !== "/") {
-      navigate("/", { state: { scrollTo: id } });
+    const path = SECTION_TO_PATH[id] || "/";
+
+    // If we're already on HomePage (any of its section routes), just scroll.
+    // URL will update via your HomePage scroll-spy.
+    if (isHomeSectionRoute) {
+      scroller.scrollTo(id, { smooth: true, duration: 500, offset });
       return;
     }
 
-    // Already on homepage → scroll now
-    scroller.scrollTo(id, {
-      smooth: true,
-      duration: 500,
-      offset,
-    });
+    // From other pages (/terms, /privacy, /package page, etc.) navigate first,
+    // then HomePage will scroll using location.state.scrollTo
+    navigate(path, { state: { scrollTo: id } });
   };
 
+  // ✅ Compact footer spacing ONLY on these pages
+  const isLegalPage =
+    location.pathname === "/terms" ||
+    location.pathname === "/privacy" ||
+    location.pathname === "/terms-and-conditions" ||
+    location.pathname === "/privacy-policy" ||
+    location.pathname.includes("terms") ||
+    location.pathname.includes("privacy");
+
   return (
-    <footer className="footer">
+    <footer className={`footer ${isLegalPage ? "footer--compact" : ""}`}>
       <div className="footer__inner">
-        {/* Top section */}
         <div className="footer__top">
-          {/* Brand + tagline */}
           <div className="footer__brand">
             <button
-              type="button"
               className="footer__logoBtn"
               onClick={() => goToSection("home", -80)}
-              aria-label="Go to home"
+              aria-label="Go to top"
+              type="button"
             >
               <div className="footer__logo">
-                <span className="logo">yu</span>
-                <span className="logoRocket">rocket.</span>
+                <span className="logo">Yu</span>
+                <span className="logoRocket">Rocket</span>
               </div>
             </button>
 
             <p className="footer__tagline">
-              Outbound that respects your brand and your domain.
-              <br />
-              Serving B2B teams worldwide.
+              Helping brands grow with strategy, design, and performance
+              marketing.
             </p>
 
             <div className="footer__social">
-              <a href="mailto:contact@yurocket.com" className="footer__social-link">
+              <a
+                className="footer__social-link"
+                href="mailto:contact@yurocket.com"
+                aria-label="Email"
+              >
                 <FaEnvelope />
               </a>
 
               <a
+                className="footer__social-link"
                 href="https://www.linkedin.com"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="footer__social-link"
+                rel="noreferrer"
+                aria-label="LinkedIn"
               >
                 <FaLinkedin />
               </a>
             </div>
           </div>
 
-          {/* Navigation columns */}
           <div className="footer__sections">
             <div className="footer__section">
               <h4>Company</h4>
               <ul>
                 <li>
                   <button
-                    type="button"
-                    className="footer__link footer__linkBtn"
+                    className="footer__linkBtn footer__link"
                     onClick={() => goToSection("services")}
+                    type="button"
                   >
                     Services
                   </button>
                 </li>
                 <li>
                   <button
-                    type="button"
-                    className="footer__link footer__linkBtn"
+                    className="footer__linkBtn footer__link"
                     onClick={() => goToSection("process")}
+                    type="button"
                   >
                     Process
                   </button>
                 </li>
                 <li>
                   <button
-                    type="button"
-                    className="footer__link footer__linkBtn"
+                    className="footer__linkBtn footer__link"
                     onClick={() => goToSection("results")}
+                    type="button"
                   >
                     Results
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="footer__linkBtn footer__link"
+                    onClick={() => goToSection("package")}
+                    type="button"
+                  >
+                    Package
                   </button>
                 </li>
               </ul>
@@ -103,18 +136,22 @@ const Footer = () => {
               <h4>Contact</h4>
               <ul>
                 <li>
-                  <a href="mailto:contact@yurocket.com" className="footer__link">
+                  <a
+                    className="footer__link"
+                    href="mailto:contact@yurocket.com"
+                  >
                     contact@yurocket.com
                   </a>
                 </li>
                 <li>
-                  <button
-                    type="button"
+                  <a
                     className="footer__link footer__linkBtn"
-                    onClick={() => goToSection("growth-cta", -80)}
+                    href="https://calendly.com/arslanjavedchang/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Book a call
-                  </button>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -124,9 +161,9 @@ const Footer = () => {
               <ul>
                 <li>
                   <button
-                    type="button"
-                    className="footer__link footer__linkBtn"
+                    className="footer__linkBtn footer__link"
                     onClick={() => goToSection("faq")}
+                    type="button"
                   >
                     FAQ
                   </button>
@@ -136,24 +173,53 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom row */}
         <div className="footer__bottom">
-          <p>© 2025 YuRocket. All rights reserved.</p>
+          <div className="footer__legalRow">
+            <span>© 2025 YuRocket. All rights reserved.</span>
+
+            <span className="footer__legalLinks">
+              <span className="footer__legalSep">•</span>
+
+              <button
+                className="footer__linkBtn footer__link footer__legalLink"
+                onClick={() => navigate("/terms")}
+                type="button"
+              >
+                <b>Terms and Conditions</b>
+              </button>
+
+              <span className="footer__legalSep">•</span>
+
+              <button
+                className="footer__linkBtn footer__link footer__legalLink"
+                onClick={() => navigate("/privacy")}
+                type="button"
+              >
+                <b>Privacy Policy</b>
+              </button>
+            </span>
+          </div>
 
           <button
-            type="button"
             className="back-to-top"
             onClick={() => {
-              if (location.pathname !== "/") {
+              // On HomePage (any of its section routes): scroll to home section.
+              // On other pages: just scroll to top of that page.
+              if (isHomeSectionRoute) {
+                scroller.scrollTo("home", {
+                  smooth: true,
+                  duration: 500,
+                  offset: -80,
+                });
+              } else {
                 window.scrollTo({ top: 0, behavior: "smooth" });
-                return;
               }
-              goToSection("home", -80);
             }}
+            type="button"
           >
-            ↑ Back to top
+            Back to top
           </button>
-          </div>
+        </div>
       </div>
     </footer>
   );

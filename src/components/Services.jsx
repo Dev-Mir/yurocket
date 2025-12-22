@@ -27,8 +27,8 @@ const Services = () => {
             <div className="service-card__content">
               <h3 className="service-card__title">Email Outreach</h3>
               <p className="service-card__text">
-                Personalized, deliverability-safe campaigns that drive
-                qualified replies at scale.
+                Personalized, deliverability-safe campaigns that drive qualified
+                replies at scale.
               </p>
             </div>
           </article>
@@ -57,8 +57,8 @@ const Services = () => {
                 Lead Sourcing &amp; Enrichment
               </h3>
               <p className="service-card__text">
-                Hand-verified lists, intent signals, and firmographic
-                enrichment to reach the right buyers.
+                Hand-verified lists, intent signals, and firmographic enrichment
+                to reach the right buyers.
               </p>
             </div>
           </article>
@@ -85,8 +85,8 @@ const Services = () => {
             <div className="service-card__content">
               <h3 className="service-card__title">Systems &amp; Automations</h3>
               <p className="service-card__text">
-                n8n / Make / Zapier + CRM. Reliable ops with clean routing
-                and transparent reporting.
+                n8n / Make / Zapier + CRM. Reliable ops with clean routing and
+                transparent reporting.
               </p>
             </div>
           </article>

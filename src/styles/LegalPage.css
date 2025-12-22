@@ -1,0 +1,293 @@
+/* =========================
+   Legal Pages (Terms / Privacy)
+   YuRocket — warm, premium, readable
+========================= */
+
+.legalPage {
+  background: #fffdf9;
+  min-height: calc(100vh - 80px);
+  padding-top: 120px; /* fixed navbar space */
+  padding-bottom: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft background glow */
+.legalPage::before {
+  content: "";
+  position: absolute;
+  inset: -120px -120px auto -120px;
+  height: 520px;
+  pointer-events: none;
+  filter: saturate(1.1);
+}
+
+.legalPage__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 18px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   Header Card
+========================= */
+.legalPage__header {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 28px;
+  padding: 34px 30px 26px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 26px 70px rgba(12, 18, 32, 0.1),
+    0 6px 16px rgba(12, 18, 32, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent line */
+.legalPage__header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 22px;
+  right: 22px;
+  height: 5px;
+  border-radius: 999px;
+  /* background: linear-gradient(90deg, #FEBC5E, #facc15, #fb923c); */
+  opacity: 0.95;
+}
+
+/* Title */
+.legalPage__title {
+  margin: 6px 0 8px;
+  font-size: 44px;
+  line-height: 1.08;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+/* Sub meta */
+.legalPage__updated {
+  margin: 0 0 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  background: rgba(254, 188, 94, 0.14);
+  border: 1px solid rgba(254, 188, 94, 0.35);
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+
+.legalPage__updated::before {
+  content: "⏱";
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.legalPage__intro {
+  margin: 10px 0 0;
+  color: #374151;
+  font-size: 16px;
+  line-height: 1.85;
+  max-width: 78ch;
+}
+
+/* =========================
+   Sections
+========================= */
+.legalPage__section {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 26px;
+  padding: 22px 22px;
+  margin-top: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08),
+    0 3px 10px rgba(15, 23, 42, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* subtle hover lift */
+.legalPage__section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 66px rgba(15, 23, 42, 0.1),
+    0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+/* Section left accent */
+.legalPage__section::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  bottom: 18px;
+  width: 4px;
+  border-radius: 999px;
+  /* background: linear-gradient(180deg, rgba(254, 188, 94, 0.95), rgba(249, 115, 22, 0.55)); */
+  opacity: 0.85;
+}
+
+/* =========================
+   PROFESSIONAL Headings
+========================= */
+
+/* Section headings */
+.legalPage__section h2 {
+  margin: 0 0 10px;
+  padding-left: 16px; /* aligns with accent bar */
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* optional small spark */
+.legalPage__section h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  margin-top: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(254, 188, 94, 0.7),
+    rgba(254, 188, 94, 0)
+  );
+}
+
+/* Paragraphs and lists */
+.legalPage__section p {
+  margin: 10px 0;
+  padding-left: 16px;
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 86ch;
+}
+
+.legalPage__section ul {
+  margin: 8px 0 10px;
+  padding-left: 36px; /* list indent */
+  color: #374151;
+}
+
+.legalPage__section li {
+  margin: 7px 0;
+  line-height: 1.85;
+}
+
+/* Better list bullets */
+.legalPage__section li::marker {
+  color: #febc5e;
+  font-size: 1.05em;
+}
+
+/* Contact box */
+.legalPage__contact {
+  margin-top: 14px;
+  padding: 14px 16px 10px;
+  border-top: 1px solid #fffdf9;
+  background: rgba(254, 188, 94, 0.08);
+  border-radius: 18px;
+  border: 1px solid rgba(254, 188, 94, 0.2);
+  margin-left: 16px;
+  max-width: 560px;
+}
+
+/* Links */
+.legalPage__link {
+  color: #0f172a;
+  text-decoration: none;
+  position: relative;
+  font-weight: 700;
+}
+
+.legalPage__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #febc5e, #facc15);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.legalPage__link:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================
+   Mobile
+========================= */
+@media (max-width: 900px) {
+  .legalPage__title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .legalPage {
+    padding-top: 105px;
+    padding-bottom: 40px;
+  }
+
+  .legalPage__header {
+    border-radius: 22px;
+    padding: 26px 20px 20px;
+  }
+
+  .legalPage__title {
+    font-size: 30px;
+  }
+
+  .legalPage__intro {
+    font-size: 15px;
+  }
+
+  .legalPage__section {
+    border-radius: 22px;
+    padding: 18px 16px;
+  }
+
+  .legalPage__section::before {
+    left: 14px;
+    top: 14px;
+    bottom: 14px;
+  }
+
+  .legalPage__section h2,
+  .legalPage__section p {
+    padding-left: 14px;
+  }
+
+  .legalPage__section ul {
+    padding-left: 34px;
+  }
+
+  .legalPage__contact {
+    margin-left: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .legalPage__updated {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .legalPage__title {
+    font-size: 26px;
+  }
+}

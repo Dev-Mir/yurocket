@@ -62,38 +62,38 @@ const Package = () => {
     return () => io.disconnect();
   }, []);
 
-       const benefits = [
-  {
-    icon: <FaShieldAlt />,
-    title: "Money-Back Guarantee",
-    desc: "If we don’t meet our lead target, you get a refund or we work for free until it's delivered. For example, if we promise 5 leads and fail, we’ll continue working for free until the target is met."
-  },
-  {
-    icon: <FaBullseye />,
-    title: "Personalized Outreach",
-    desc: "We understand your ICP and business model, then select the best channels (Email, LinkedIn, Meta) to deliver targeted, effective outreach."
-  },
-  {
-    icon: <FaLayerGroup />,
-    title: "Diversified Sales Experience",
-    desc: "Our team leverages Meta Ads, LinkedIn, Email, Google Ads, and AI marketing for a comprehensive outreach strategy tailored to your business."
-  },
-  {
-    icon: <FaHandsHelping />,
-    title: "Done-for-You Service",
-    desc: "No need for additional tool subscriptions. We handle everything from setup to execution at a fraction of the cost."
-  },
-  {
-    icon: <FaHeadset />,
-    title: "Quick Customer Support Team",
-    desc: "Our support team is available 24/7 to provide fast responses and ensure your campaigns stay on track."
-  },
-  {
-    icon: <FaSyncAlt />,
-    title: "Continuous Updates",
-    desc: "We provide daily and weekly updates, offering full transparency into campaign progress, results, and next steps."
-  },
-];
+  const benefits = [
+    {
+      icon: <FaHandsHelping />,
+      title: "Done-for-You Service",
+      desc: "No need for additional tool subscriptions. We handle everything from setup to execution at a fraction of the cost.",
+    },
+    {
+      icon: <FaBullseye />,
+      title: "Personalized Outreach",
+      desc: "We understand your ICP and business model, then select the best channels (Email, LinkedIn, Meta) to deliver targeted, effective outreach.",
+    },
+    {
+      icon: <FaLayerGroup />,
+      title: "Diversified Sales Experience",
+      desc: "Our team leverages Meta Ads, LinkedIn, Email, Google Ads, and AI marketing for a comprehensive outreach strategy tailored to your business.",
+    },
+    {
+      icon: <FaShieldAlt />,
+      title: "Money-Back Guarantee",
+      desc: "If we don’t meet our lead target, you get a refund or we work for free until it's delivered. For example, if we promise 5 leads and fail, we’ll continue working for free until the target is met.",
+    },
+    {
+      icon: <FaHeadset />,
+      title: "Quick Customer Support Team",
+      desc: "Our support team is available 24/7 to provide fast responses and ensure your campaigns stay on track.",
+    },
+    {
+      icon: <FaSyncAlt />,
+      title: "Continuous Updates",
+      desc: "We provide daily and weekly updates, offering full transparency into campaign progress, results, and next steps.",
+    },
+  ];
 
   return (
     <section id="package" className="packages">
@@ -101,17 +101,20 @@ const Package = () => {
         {/* ✅ NEW: BENEFITS / CARDS SECTION (replaces circles/arrows workflow) */}
         <div
           ref={benefitsRef}
-          className={`packagesBenefitsY ${benefitsVisible ? "packagesBenefitsY--in" : ""}`}
+          className={`packagesBenefitsY ${
+            benefitsVisible ? "packagesBenefitsY--in" : ""
+          }`}
         >
           <div className="packagesBenefitsY__pill">Why this offer works</div>
 
           <h2 className="packagesBenefitsY__title">
-            Built to be <span className="packagesBenefitsY__accent">safe</span>, clear, and results-driven.
+            Built to be <span className="packagesBenefitsY__accent">safe</span>,
+            clear, and results-driven.
           </h2>
 
           <p className="packagesBenefitsY__subtitle">
-            You get a full team, the right channel strategy, and guaranteed accountability — without tool costs or
-            complexity.
+            You get a full team, the right channel strategy, and guaranteed
+            accountability — without tool costs or complexity.
           </p>
 
           <div className="packagesBenefitsY__grid">
@@ -135,16 +138,19 @@ const Package = () => {
           <div className="packages__left">
             <h2
               ref={titleRef}
-              className={`packages__heading ${titleVisible ? "packages__heading--in" : ""}`}
+              className={`packages__heading ${
+                titleVisible ? "packages__heading--in" : ""
+              }`}
             >
-              Bulk Seller <span className="packages__accent">Growth</span> Engine
+              Bulk Seller <span className="packages__accent">Growth</span>{" "}
+              Engine
             </h2>
 
             <p className="packages__desc">
               We help manufacturers and wholesalers get{" "}
-              <strong>10–30 qualified bulk buyers</strong> (retail chains, distributors,
-              or franchises) into their pipeline every month using done-for-you LinkedIn
-              and email outreach.
+              <strong>10–30 qualified bulk buyers</strong> (retail chains,
+              distributors, or franchises) into their pipeline every month using
+              done-for-you LinkedIn and email outreach.
             </p>
 
             <button
@@ -163,7 +169,9 @@ const Package = () => {
           <div className="packages__right">
             <div className="packages__rightGrid">
               <div className="packages__colHeader">
-                <span className="packages__colHeaderTitle">Manufacturers who want:</span>
+                <span className="packages__colHeaderTitle">
+                  Manufacturers who want:
+                </span>
               </div>
               <div className="packages__colHeader">
                 <span className="packages__colHeaderTitle">

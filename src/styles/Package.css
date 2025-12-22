@@ -1,7 +1,7 @@
 /* Section shell */
 .packages {
   padding: 42px 20px;
-  background: #fffaf2;
+  background: #fffdf9;
 }
 
 .packages__inner {
@@ -35,7 +35,7 @@
   gap: 10px;
   padding: 10px 14px;
   border-radius: 999px;
-  background: #FEBC5E;
+  background: #febc5e;
   border: 1px solid rgba(0, 0, 0, 0.08);
   font-weight: 900;
   font-size: 13px;
@@ -83,12 +83,11 @@
   width: 100%;
   height: 4px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #FEBC5E, #ff9f2f);
+  background: linear-gradient(90deg, #febc5e, #ff9f2f);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.25s ease-in-out;
-    animation: heroTitleWipe 0.8s ease-out forwards;
-
+  animation: heroTitleWipe 0.8s ease-out forwards;
 }
 .packages__heading:hover::after {
   transform: scaleX(1);
@@ -96,7 +95,7 @@
 
 /* Growth highlight same as button */
 .packages__accent {
-  color: #FEBC5E;
+  color: #febc5e;
   text-shadow: 0 8px 22px rgba(254, 188, 94, 0.35);
 }
 
@@ -115,7 +114,7 @@
   justify-content: center;
   padding: 14px 22px;
   border-radius: 999px;
-  background: #FEBC5E;
+  background: #febc5e;
   border: 1px solid rgba(0, 0, 0, 0.08);
   font-weight: 900;
   font-size: 15px;
@@ -132,7 +131,7 @@
 }
 
 .packages__ctaBtn--ghost {
-  background: #fff4df;
+  background: #fffdf9;
   box-shadow: none;
 }
 
@@ -187,7 +186,7 @@
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #FEBC5E, #ff9f2f);
+  background: linear-gradient(180deg, #febc5e, #ff9f2f);
   box-shadow: 0 10px 20px rgba(254, 188, 94, 0.28);
 }
 
@@ -212,7 +211,11 @@
 .packagesModal__overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 20%, rgba(0,0,0,0.55), rgba(0,0,0,0.72));
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.72)
+  );
   border: none;
   cursor: pointer;
 }
@@ -229,8 +232,14 @@
 }
 
 @keyframes packagesModalPop {
-  from { transform: translateY(10px) scale(0.99); opacity: 0; }
-  to   { transform: translateY(0) scale(1); opacity: 1; }
+  from {
+    transform: translateY(10px) scale(0.99);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }
 
 .packagesModal__topbar {
@@ -289,9 +298,9 @@
   background: #fff4df;
   display: grid;
   place-items: center;
-  color: #FEBC5E;
+  color: #febc5e;
   font-size: 20px;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
 }
 
@@ -322,12 +331,12 @@
   gap: 8px;
   padding: 9px 12px;
   border-radius: 999px;
-  background: #FEBC5E;
+  background: #febc5e;
   color: #111;
   font-weight: 900;
   font-size: 12px;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 18px 38px rgba(0,0,0,0.14);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.14);
 }
 
 .packagesModal__pill--soft {
@@ -369,9 +378,9 @@
   display: grid;
   place-items: center;
   background: #fff4df;
-  color: #FEBC5E;
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 16px 34px rgba(0,0,0,0.08);
+  color: #febc5e;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
 }
 
@@ -419,7 +428,7 @@
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #FEBC5E, #ff9f2f);
+  background: linear-gradient(180deg, #febc5e, #ff9f2f);
   box-shadow: 0 6px 14px rgba(254, 188, 94, 0.35);
 }
 
@@ -446,12 +455,20 @@
 
 /* Responsive */
 @media (max-width: 980px) {
-  .packages__enterpriseCard { grid-template-columns: 1fr; }
-  .packages__rightGrid { grid-template-columns: 1fr; }
+  .packages__enterpriseCard {
+    grid-template-columns: 1fr;
+  }
+  .packages__rightGrid {
+    grid-template-columns: 1fr;
+  }
 }
 @media (max-width: 920px) {
-  .packagesModal__grid { grid-template-columns: 1fr; }
-  .packagesModal__hero { grid-template-columns: auto 1fr; }
+  .packagesModal__grid {
+    grid-template-columns: 1fr;
+  }
+  .packagesModal__hero {
+    grid-template-columns: auto 1fr;
+  }
   .packagesModal__heroCTA {
     grid-column: 1 / -1;
     justify-content: flex-start;
@@ -460,7 +477,7 @@
 }
 
 /* Add perspective so 3D tilts look real */
-.packagesBenefitsY__grid{
+.packagesBenefitsY__grid {
   perspective: 1200px;
 }
 
@@ -468,7 +485,7 @@
    3D Benefit Card (Yellow)
    Visible by default ✅
 ========================= */
-.packagesBenefitCardY{
+.packagesBenefitCardY {
   --d: 0ms;
 
   position: relative;
@@ -478,83 +495,74 @@
   margin: 10px;
 
   background: linear-gradient(180deg, #ffffff 0%, #fff7ea 140%);
-  border: 1px solid rgba(15, 23, 42, 0.10);
+  border: 1px solid rgba(15, 23, 42, 0.1);
 
-  box-shadow:
-    0 14px 28px rgba(15, 23, 42, 0.12),
-    0 2px 10px rgba(15, 23, 42, 0.06),
-    0 1px 0 rgba(255,255,255,0.85) inset;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12),
+    0 2px 10px rgba(15, 23, 42, 0.06), 0 1px 0 rgba(255, 255, 255, 0.85) inset;
 
   /* ✅ visible by default */
   opacity: 1;
   transform: perspective(900px) translateY(0);
   transform-style: preserve-3d;
 
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease,
-    border-color .22s ease,
-    background .22s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease,
+    border-color 0.22s ease, background 0.22s ease;
 }
 
 /* soft highlight + corner lighting */
-.packagesBenefitCardY::before{
+.packagesBenefitCardY::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  background:
-    radial-gradient(120% 90% at 18% 0%,
+  /* background:
+    radial-gradient(20% 10% at 18% 0%,
       rgba(254,188,94,0.30), transparent 55%),
     radial-gradient(120% 90% at 110% 110%,
-      rgba(15,23,42,0.10), transparent 60%);
+      rgba(15,23,42,0.10), transparent 60%); */
   opacity: 0.75;
   z-index: 0;
 }
 
 /* sheen ring on hover */
-.packagesBenefitCardY::after{
+.packagesBenefitCardY::after {
   content: "";
   position: absolute;
   inset: 1px;
   border-radius: inherit;
   pointer-events: none;
-  background: linear-gradient(
-    135deg,
-    rgba(254,188,94,0.65),
-    rgba(254,188,94,0.00) 40%,
-    rgba(15,23,42,0.10) 70%,
-    rgba(254,188,94,0.35)
-  );
   opacity: 0;
-  transition: opacity .22s ease;
+  transition: opacity 0.22s ease;
   z-index: 0;
 }
 
-.packagesBenefitCardY > *{
+.packagesBenefitCardY > * {
   position: relative;
   z-index: 1;
 }
 
 /* 3D hover */
-.packagesBenefitCardY:hover{
+.packagesBenefitCardY:hover {
   transform: perspective(900px) translateY(-8px) rotateX(6deg) rotateY(-6deg);
-  border-color: rgba(254,188,94,0.62);
-  box-shadow:
+  border-color: #febc5e;
+  /* box-shadow:
     0 30px 70px rgba(15, 23, 42, 0.18),
     0 10px 22px rgba(15, 23, 42, 0.10),
-    0 1px 0 rgba(255,255,255,0.90) inset;
+    0 1px 0 rgba(255,255,255,0.90) inset; */
 }
 
-.packagesBenefitCardY:hover::after{ opacity: 1; }
+.packagesBenefitCardY:hover::after {
+  opacity: 1;
+}
 
-.packagesBenefitCardY:active{
-  transform: perspective(900px) translateY(-4px) rotateX(3deg) rotateY(-3deg) scale(0.99);
+.packagesBenefitCardY:active {
+  transform: perspective(900px) translateY(-4px) rotateX(3deg) rotateY(-3deg)
+    scale(0.99);
 }
 
 /* Icon pops forward for real depth */
-.packagesBenefitCardY__icon{
+.packagesBenefitCardY__icon {
   width: 44px;
   height: 44px;
   border-radius: 14px;
@@ -562,19 +570,23 @@
   place-items: center;
   font-size: 18px;
 
-  background: linear-gradient(180deg, rgba(254,188,94,0.30), rgba(254,188,94,0.12));
-  color: #FEBC5E;
-  border: 1px solid rgba(254,188,94,0.38);
+  background: linear-gradient(
+    0deg,
+    rgba(245, 208, 158, 0.3),
+    rgba(254, 188, 94, 0.12)
+  );
+  color: #febc5e;
+  /* border: 1px solid rgba(254,188,94,0.38);  */
 
-  box-shadow:
+  /* box-shadow:
     0 12px 18px rgba(254,188,94,0.18),
-    0 1px 0 rgba(255,255,255,0.85) inset;
+    0 1px 0 rgba(255,255,255,0.85) inset; */
 
   transform: translateZ(22px);
   margin-bottom: 8px;
 }
 
-.packagesBenefitCardY__title{
+.packagesBenefitCardY__title {
   margin: 0 0 6px;
   font-size: 18px;
   font-weight: 950;
@@ -583,27 +595,27 @@
   transform: translateZ(16px);
 }
 
-.packagesBenefitCardY__desc{
+.packagesBenefitCardY__desc {
   margin: 0;
   font-size: 15px;
   line-height: 1.7;
-  color: rgba(15, 23, 42, 0.70);
+  color: rgba(15, 23, 42, 0.7);
   font-weight: 650;
   transform: translateZ(12px);
 }
 
 /* Optional: animate in ONLY when .packagesBenefitsY--in is added */
-.packagesBenefitsY--in .packagesBenefitCardY{
-  animation: cardPop .55s ease both;
+.packagesBenefitsY--in .packagesBenefitCardY {
+  animation: cardPop 0.55s ease both;
   animation-delay: var(--d);
 }
 
-@keyframes cardPop{
-  from{
+@keyframes cardPop {
+  from {
     opacity: 0;
     transform: perspective(900px) translateY(14px) rotateX(4deg);
   }
-  to{
+  to {
     opacity: 1;
     transform: perspective(900px) translateY(0) rotateX(0deg);
   }
@@ -615,7 +627,7 @@
    Visible by default ✅
 ========================= */
 
-.packagesBenefitsY{
+.packagesBenefitsY {
   position: relative;
   overflow: hidden;
 
@@ -625,33 +637,28 @@
   text-align: center;
 
   /* warm premium base */
-  background: linear-gradient(180deg, #ffffff 0%, #fffaf2 140%);
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 140%);
   color: #0f172a;
 
   border: 1px solid rgba(15, 23, 42, 0.08);
 
   /* layered depth (no blur filters) */
-  box-shadow:
-    0 22px 55px rgba(15, 23, 42, 0.10),
-    0 3px 14px rgba(15, 23, 42, 0.06),
-    0 1px 0 rgba(255,255,255,0.90) inset;
+  box-shadow: 0 22px 55px rgba(27, 38, 65, 0.1),
+    0 3px 14px rgba(15, 23, 42, 0.06), 0 1px 0 rgba(255, 255, 255, 0.9) inset;
 }
 
 /* soft glow */
-.packagesBenefitsY::before{
+.packagesBenefitsY::before {
   content: "";
   position: absolute;
   inset: -40% -20% -50% -20%;
   pointer-events: none;
-  background:
-    radial-gradient(60% 40% at 20% 15%, rgba(254,188,94,0.30), transparent 55%),
-    radial-gradient(50% 35% at 85% 25%, rgba(254,188,94,0.18), transparent 60%),
-    radial-gradient(55% 45% at 60% 120%, rgba(15,23,42,0.08), transparent 55%);
+
   opacity: 0.9;
 }
 
 /* subtle top highlight line */
-.packagesBenefitsY::after{
+.packagesBenefitsY::after {
   content: "";
   position: absolute;
   left: 24px;
@@ -659,12 +666,12 @@
   top: 14px;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, transparent, rgba(254,188,94,0.65), transparent);
+  /* background: linear-gradient(90deg, transparent, rgba(254,188,94,0.65), transparent); */
   opacity: 0.7;
   pointer-events: none;
 }
 
-.packagesBenefitsY__pill{
+.packagesBenefitsY__pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -676,16 +683,15 @@
   text-transform: uppercase;
 
   color: #0f172a;
-  background: linear-gradient(180deg, rgba(254,188,94,0.20), rgba(254,188,94,0.10));
-  border: 1px solid rgba(254,188,94,0.40);
+  /* background: linear-gradient(180deg, rgba(254,188,94,0.20), rgba(254,188,94,0.10)); */
+  border: 1px solid rgba(254, 188, 94, 0.4);
 
-  box-shadow:
-    0 10px 18px rgba(254,188,94,0.14),
-    0 1px 0 rgba(255,255,255,0.90) inset;
+  box-shadow: 0 10px 18px rgba(254, 188, 94, 0.14),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
 }
 
 /* main heading */
-.packagesBenefitsY__title{
+.packagesBenefitsY__title {
   margin: 18px 0 10px;
   font-size: 42px;
   line-height: 1.06;
@@ -693,20 +699,18 @@
   letter-spacing: -0.03em;
 
   /* slight depth without looking blurry */
-  text-shadow:
-    0 16px 40px rgba(15, 23, 42, 0.10),
-    0 2px 0 rgba(255,255,255,0.60);
+  text-shadow: 0 16px 40px rgba(15, 23, 42, 0.1),
+    0 2px 0 rgba(255, 255, 255, 0.6);
 }
 
-.packagesBenefitsY__accent{
-  color: #FEBC5E;
-  text-shadow:
-    0 14px 30px rgba(254, 188, 94, 0.28),
-    0 2px 0 rgba(255,255,255,0.55);
+.packagesBenefitsY__accent {
+  color: #febc5e;
+  text-shadow: 0 14px 30px rgba(254, 188, 94, 0.28),
+    0 2px 0 rgba(255, 255, 255, 0.55);
 }
 
 /* subtitle */
-.packagesBenefitsY__subtitle{
+.packagesBenefitsY__subtitle {
   margin: 0 auto;
   max-width: 900px;
   color: rgba(15, 23, 42, 0.72);
@@ -719,27 +723,68 @@
    OPTIONAL: In-view animation
    (still visible if class is never added)
 -------------------------- */
-.packagesBenefitsY--in .packagesBenefitsY__pill{
-  animation: benefitFadeUp .55s ease both;
+.packagesBenefitsY--in .packagesBenefitsY__pill {
+  animation: benefitFadeUp 0.55s ease both;
 }
-.packagesBenefitsY--in .packagesBenefitsY__title{
-  animation: benefitFadeUp .65s ease both;
-  animation-delay: .06s;
+.packagesBenefitsY--in .packagesBenefitsY__title {
+  animation: benefitFadeUp 0.65s ease both;
+  animation-delay: 0.06s;
 }
-.packagesBenefitsY--in .packagesBenefitsY__subtitle{
-  animation: benefitFadeUp .65s ease both;
-  animation-delay: .12s;
+.packagesBenefitsY--in .packagesBenefitsY__subtitle {
+  animation: benefitFadeUp 0.65s ease both;
+  animation-delay: 0.12s;
 }
 
-@keyframes benefitFadeUp{
-  from{ opacity: 0; transform: translateY(10px); }
-  to{ opacity: 1; transform: translateY(0); }
+@keyframes benefitFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive */
-@media (max-width: 1000px){
-  .packagesBenefitsY__title{ font-size: 36px; }
+@media (max-width: 1000px) {
+  .packagesBenefitsY__title {
+    font-size: 36px;
+  }
 }
-@media (max-width: 620px){
-  .packagesBenefitsY__title{ font-size: 30px; }
+@media (max-width: 620px) {
+  .packagesBenefitsY__title {
+    font-size: 30px;
+  }
+}
+
+/* Compact spacing ONLY on legal pages (Terms/Privacy) */
+.footer--compact {
+  margin-top: 28px; /* was 80px */
+  padding-top: 0; /* slightly tighter */
+  padding-bottom: 40px; /* a bit less than 50px */
+}
+
+/* Copyright + legal links row */
+.footer__legalRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Keep legal links close (less space) */
+.footer__legalLinks {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* tight spacing only for these */
+}
+
+.footer__legalSep {
+  opacity: 0.6;
+  transform: translateY(-1px);
+}
+
+.footer__legalLink::after {
+  bottom: -3px; /* slightly tighter underline position */
 }

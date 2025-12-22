@@ -3,7 +3,7 @@
 =========================== */
 
 .packagePage {
-  background: #fffaf2;
+  background: #fffdf9;
   min-height: 100vh;
 }
 
@@ -23,10 +23,10 @@
   position: absolute;
   inset: -120px -80px auto -80px;
   height: 520px;
-  background:
+  /* background:
     radial-gradient(circle at 20% 20%, rgba(254, 188, 94, 0.28), transparent 55%),
     radial-gradient(circle at 75% 10%, rgba(254, 188, 94, 0.18), transparent 55%),
-    radial-gradient(circle at 55% 70%, rgba(17, 24, 39, 0.05), transparent 60%);
+    radial-gradient(circle at 55% 70%, rgba(17, 24, 39, 0.05), transparent 60%); */
   pointer-events: none;
 }
 
@@ -65,9 +65,9 @@
 }
 
 .pill--solid {
-  background: linear-gradient(135deg, #FEBC5E, #ff9f2f);
+  background: linear-gradient(135deg, #febc5e, #febc5e);
   color: #111;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
 }
 
 .pill--soft {
@@ -87,7 +87,7 @@
 }
 
 .packageHero__title span {
-  color: #FEBC5E;
+  color: #febc5e;
   text-shadow: 0 10px 30px rgba(254, 188, 94, 0.35);
 }
 
@@ -114,20 +114,20 @@
   justify-content: center;
   padding: 14px 18px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #FEBC5E, #ff9f2f);
+  background: linear-gradient(135deg, #febc5e, #febc5e);
   color: #ffffff;
   font-weight: 950;
   border: 1px solid rgba(0, 0, 0, 0.08);
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 18px 44px rgba(254, 188, 94, 0.30);
+  box-shadow: 0 18px 44px rgba(254, 188, 94, 0.3);
   transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
 }
 
 .btnPrimary:hover {
   transform: translateY(-2px);
   filter: brightness(0.99);
-  box-shadow: 0 26px 60px rgba(254, 188, 94, 0.40);
+  box-shadow: 0 26px 60px rgba(254, 188, 94, 0.4);
 }
 
 .btnPrimary:active {
@@ -186,7 +186,7 @@
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #FEBC5E, #ff9f2f);
+  background: linear-gradient(180deg, #febc5e, #ff9f2f);
   box-shadow: 0 8px 18px rgba(254, 188, 94, 0.35);
 }
 
@@ -198,7 +198,7 @@
   background: rgba(255, 255, 255, 0.92);
   border-radius: 26px;
   border: 1px solid rgba(2, 6, 23, 0.07);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.1);
   padding: 16px;
   backdrop-filter: blur(10px);
 }
@@ -219,7 +219,7 @@
 .stickyCard__meta {
   font-size: 12px;
   font-weight: 900;
-  color: rgba(15, 23, 42, 0.60);
+  color: rgba(15, 23, 42, 0.6);
 }
 
 .stickyCard__list {
@@ -239,7 +239,7 @@
   height: 10px;
   margin-right: 10px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #FEBC5E, #ff9f2f);
+  background: linear-gradient(180deg, #febc5e, #ff9f2f);
   box-shadow: 0 8px 18px rgba(254, 188, 94, 0.35);
 }
 
@@ -247,7 +247,7 @@
   margin: 10px 0 0;
   font-size: 12.5px;
   font-weight: 700;
-  color: rgba(15, 23, 42, 0.60);
+  color: rgba(15, 23, 42, 0.6);
   line-height: 1.45;
 }
 
@@ -300,11 +300,15 @@
 
 .infoCard:hover {
   transform: translateY(-2px);
-  box-shadow: 0 34px 100px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 34px 100px rgba(0, 0, 0, 0.1);
 }
 
 .infoCard--soft {
-  background: linear-gradient(180deg, rgba(255, 250, 242, 0.85), rgba(255, 255, 255, 0.95));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 250, 242, 0.85),
+    rgba(255, 255, 255, 0.95)
+  );
 }
 
 .infoCard__head {
@@ -321,12 +325,11 @@
   display: grid;
   place-items: center;
   background: rgba(255, 244, 223, 0.95);
-  color: #FEBC5E;
+  color: #febc5e;
   border: 1px solid rgba(2, 6, 23, 0.06);
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
 }
-
 
 .infoCard__icon--muted {
   color: #0f172a;
@@ -357,7 +360,7 @@
 
 /* Optional: make the No-need icon box slightly red-tinted (still clean) */
 .infoCard--danger .infoCard__icon {
-  background: rgba(239, 68, 68, 0.10);
+  background: rgba(239, 68, 68, 0.1);
   border-color: rgba(239, 68, 68, 0.25);
 }
 
@@ -374,7 +377,7 @@
   display: flex;
   gap: 10px;
   align-items: flex-start;
-  font-weight: 800;
+  font-weight: 500;
   color: #0f172a;
   line-height: 1.4;
 }
@@ -404,7 +407,7 @@
 
 .accItem:hover {
   transform: translateY(-1px);
-  box-shadow: 0 34px 100px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 34px 100px rgba(0, 0, 0, 0.1);
 }
 
 .accBtn {
@@ -427,7 +430,7 @@
   display: grid;
   place-items: center;
   background: rgba(255, 244, 223, 0.95);
-  color: #FEBC5E;
+  color: #febc5e;
   border: 1px solid rgba(2, 6, 23, 0.06);
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
 }
@@ -441,7 +444,7 @@
 
 .accDesc {
   display: block;
-  color: rgba(15, 23, 42, 0.60);
+  color: rgba(15, 23, 42, 0.6);
   font-weight: 650;
   line-height: 1.5;
   font-size: 13px;
@@ -490,7 +493,7 @@
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #FEBC5E, #ff9f2f);
+  background: linear-gradient(180deg, #febc5e, #ff9f2f);
   box-shadow: 0 8px 18px rgba(254, 188, 94, 0.35);
 }
 
@@ -516,7 +519,7 @@
   background: rgba(255, 255, 255, 0.94);
   border-radius: 30px;
   border: 1px solid rgba(2, 6, 23, 0.07);
-  box-shadow: 0 30px 95px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 30px 95px rgba(0, 0, 0, 0.1);
   padding: 20px;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -530,9 +533,16 @@
   content: "";
   position: absolute;
   inset: -70px;
-  background:
-    radial-gradient(circle at 18% 25%, rgba(254, 188, 94, 0.28), transparent 46%),
-    radial-gradient(circle at 80% 10%, rgba(254, 188, 94, 0.18), transparent 50%);
+  background: radial-gradient(
+      circle at 18% 25%,
+      rgba(252, 225, 187, 0.28),
+      transparent 46%
+    ),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(250, 216, 167, 0.18),
+      transparent 50%
+    );
   pointer-events: none;
 }
 
@@ -585,7 +595,7 @@
   display: grid;
   place-items: center;
   background: rgba(255, 244, 223, 0.95);
-  color: #FEBC5E;
+  color: #febc5e;
   border: 1px solid rgba(2, 6, 23, 0.06);
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
@@ -612,7 +622,7 @@
   background: rgba(255, 255, 255, 0.94);
   border-radius: 28px;
   border: 1px solid rgba(2, 6, 23, 0.07);
-  box-shadow: 0 30px 95px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 30px 95px rgba(0, 0, 0, 0.1);
   padding: 18px;
   backdrop-filter: blur(10px);
 }
@@ -635,11 +645,12 @@
   font-weight: 700;
   outline: none;
   color: #0f172a;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.15s ease;
 }
 
 .pageInput::placeholder {
-  color: rgba(15, 23, 42, 0.40);
+  color: rgba(15, 23, 42, 0.4);
   font-weight: 700;
 }
 
@@ -656,9 +667,8 @@
   grid-column: 1 / -1;
 }
 
-.pageInput.phone{
-
-    width: 41.2%;
+.pageInput.phone {
+  width: 41.2%;
   height: 48px;
   border-radius: 16px;
   border: 1px solid rgba(148, 163, 184, 0.35);
@@ -668,9 +678,8 @@
   font-weight: 700;
   outline: none;
   color: #0f172a;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
-
-  
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.15s ease;
 }
 
 .pageForm__bottom {
@@ -729,12 +738,12 @@
    Clean (no blur / no shadows)
 =========================== */
 
-:root{
-  --accent:#FEBC5E;
-  --accent2:#ff9f2f;
-  --ink:#0f172a;
-  --muted: rgba(15,23,42,.65);
-  --border: rgba(2,6,23,.10);
+:root {
+  --accent: #febc5e;
+  --accent2: #ff9f2f;
+  --ink: #0f172a;
+  --muted: rgba(15, 23, 42, 0.65);
+  --border: rgba(2, 6, 23, 0.1);
   --bg: #fffaf2;
   --card: #ffffff;
   --soft: #fff4df;
@@ -748,10 +757,9 @@
 .ctaMini__icon svg,
 .tabCard__list svg,
 .cleanList svg,
-.stickyCard__list svg{
+.stickyCard__list svg {
   color: var(--accent);
 }
-
 
 /* Change only the icon color inside the solid pill */
 .pill--solid .pill__icon {
@@ -760,17 +768,17 @@
 
 /* Larger list icons (clean) */
 .tabCard__list svg,
-.cleanList svg{
+.cleanList svg {
   flex-shrink: 0;
   margin-top: 2px;
   font-size: 16px;
 }
 
 /* Accordion bullets + checks */
-.accList li::before{
+.accList li::before {
   background: linear-gradient(180deg, var(--accent), var(--accent2));
 }
-.accList--checks li::after{
+.accList--checks li::after {
   color: var(--accent);
   font-weight: 950;
 }
@@ -780,7 +788,7 @@
 .accItem,
 .stickyCard,
 .ctaCard,
-.formCard{
+.formCard {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 26px;
@@ -791,17 +799,17 @@
 .accItem:hover,
 .stickyCard:hover,
 .ctaCard:hover,
-.formCard:hover{
-  border-color: rgba(254,188,94,.55);
+.formCard:hover {
+  border-color: rgba(254, 188, 94, 0.55);
   transform: translateY(-1px);
-  transition: transform .18s ease, border-color .18s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease;
 }
 
 /* Titles + text */
 .infoCard h3,
 .accTitle,
 .ctaCard__left h2,
-.sectionHead h2{
+.sectionHead h2 {
   color: var(--ink);
   letter-spacing: -0.02em;
 }
@@ -811,49 +819,46 @@
 .sectionHead p,
 .ctaCard__left p,
 .pageConsent,
-.stickyCard__note{
+.stickyCard__note {
   color: var(--muted);
 }
 
 /* Icon boxes (flat) */
 .infoCard__icon,
 .accIcon,
-.ctaMini__icon{
+.ctaMini__icon {
   background: var(--soft);
-  border: 1px solid rgba(2,6,23,.08);
+  border: 1px solid rgba(2, 6, 23, 0.08);
 }
 
 /* Buttons (flat) */
-.btnPrimary{
+.btnPrimary {
   background: var(--accent);
-  border: 1px solid rgba(2,6,23,.10);
+  border: 1px solid rgba(2, 6, 23, 0.1);
 }
-.btnPrimary:hover{
+.btnPrimary:hover {
   background: #ffb84a;
 }
 
-.btnGhost{
+.btnGhost {
   background: #ffffff;
   border: 1px solid var(--border);
 }
-.btnGhost:hover{
-  border-color: rgba(254,188,94,.55);
+.btnGhost:hover {
+  border-color: rgba(254, 188, 94, 0.55);
 }
 
 /* Inputs (flat) */
 .pageInput,
-.pageSelect{
+.pageSelect {
   background: #ffffff;
-  border: 1px solid rgba(148,163,184,.40);
+  border: 1px solid rgba(148, 163, 184, 0.4);
 }
 .pageInput:focus,
-.pageSelect:focus{
-  border-color: rgba(254,188,94,.95);
-  box-shadow: 0 0 0 4px rgba(254,188,94,.18); /* focus ring is fine (not blur) */
+.pageSelect:focus {
+  border-color: rgba(254, 188, 94, 0.95);
+  box-shadow: 0 0 0 4px rgba(254, 188, 94, 0.18); /* focus ring is fine (not blur) */
 }
-
-
-
 
 /* Prevent any section from causing horizontal scroll */
 .packagePage__shell,
@@ -864,13 +869,13 @@
 }
 
 /* Centered section headings + hover effect */
-.centerHead{
+.centerHead {
   max-width: 1200px;
   margin: 0 auto 16px;
   text-align: center;
 }
 
-.centerHead__title{
+.centerHead__title {
   margin: 0;
   font-size: 24px;
   font-weight: 950;
@@ -878,39 +883,39 @@
   letter-spacing: -0.02em;
   display: inline-block;
   cursor: default;
-  transition: transform .18s ease, color .18s ease;
+  transition: transform 0.18s ease, color 0.18s ease;
 }
 
-.centerHead__underline{
+.centerHead__underline {
   display: block;
   width: 120px;
   height: 4px;
   margin: 10px auto 0;
   border-radius: 999px;
-  background: #FEBC5E;
-  transform: scaleX(.35);
+  background: #febc5e;
+  transform: scaleX(0.35);
   transform-origin: center;
-  transition: transform .22s ease, opacity .22s ease;
-  opacity: .9;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  opacity: 0.9;
 }
 
-.centerHead:hover .centerHead__title{
+.centerHead:hover .centerHead__title {
   transform: translateY(-1px);
   color: #111827;
 }
 
-.centerHead:hover .centerHead__underline{
+.centerHead:hover .centerHead__underline {
   transform: scaleX(1);
 }
 
 /* Centered section headings + hover effect */
-.centerHead{
+.centerHead {
   max-width: 1200px;
   margin: 0 auto 16px;
   text-align: center;
 }
 
-.centerHead__title{
+.centerHead__title {
   margin: 0;
   font-size: 24px;
   font-weight: 950;
@@ -918,27 +923,27 @@
   letter-spacing: -0.02em;
   display: inline-block;
   cursor: default;
-  transition: transform .18s ease, color .18s ease;
+  transition: transform 0.18s ease, color 0.18s ease;
 }
 
-.centerHead__underline{
+.centerHead__underline {
   display: block;
   width: 120px;
   height: 4px;
   margin: 10px auto 0;
   border-radius: 999px;
-  background: #FEBC5E;
-  transform: scaleX(.35);
+  background: #febc5e;
+  transform: scaleX(0.35);
   transform-origin: center;
-  transition: transform .22s ease, opacity .22s ease;
-  opacity: .9;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  opacity: 0.9;
 }
 
-.centerHead:hover .centerHead__title{
+.centerHead:hover .centerHead__title {
   transform: translateY(-1px);
   color: #111827;
 }
 
-.centerHead:hover .centerHead__underline{
+.centerHead:hover .centerHead__underline {
   transform: scaleX(1);
 }

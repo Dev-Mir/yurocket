@@ -11,9 +11,9 @@ import {
   FaChevronDown,
   FaClipboardList,
   FaTimes,
+  FaCircle,
 } from "react-icons/fa";
 import { FaIndustry } from "react-icons/fa";
-
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -29,8 +29,16 @@ const PackagePage = () => {
 
   const whoFor = useMemo(
     () => ({
-      manufacturers: ["Wholesalers", "Distributors", "Large retail / franchise partners around the globe"],
-      wholesalers: ["Big retailers", "Franchise chains", "Large e-commerce resellers"],
+      manufacturers: [
+        "Wholesalers",
+        "Distributors",
+        "Large retail / franchise partners around the globe",
+      ],
+      wholesalers: [
+        "Big retailers",
+        "Franchise chains",
+        "Large e-commerce resellers",
+      ],
     }),
     []
   );
@@ -44,7 +52,6 @@ const PackagePage = () => {
         bullets: [
           "For manufacturers: target wholesalers, distributors, and large franchises.",
           "For wholesalers: target retail chains, franchise groups, and big online retailers.",
-          "Set filters: countries, minimum order volume, product category, etc.",
         ],
       },
       {
@@ -59,11 +66,11 @@ const PackagePage = () => {
       {
         icon: <FaPaperPlane />,
         title: "Write and launch outreach (LinkedIn + Email)",
-        desc: "Messaging focused on bulk orders, margins, repeat business, and logistics.",
+        desc: "Messaging focused on lead pain points, personalization, a clear value proposition, and a CTA that converts.",
         bullets: [
-          "Messaging focused on bulk orders, margins, repeat business, and logistics.",
+          "Messaging focused on your leads’ pain points, built with deep personalization, a clear value proposition, and a CTA that converts.",
           "Multi-step email + LinkedIn sequences.",
-          "We tag/qualify replies so you only spend time on real buying interest.",
+          "Strong, conversion-focused CTAs plus reply tagging/qualification so you only spend time on real buying interest.",
         ],
       },
       {
@@ -116,7 +123,8 @@ const PackagePage = () => {
     []
   );
 
-  const toggleAccordion = (idx) => setOpenIdx((prev) => (prev === idx ? -1 : idx));
+  const toggleAccordion = (idx) =>
+    setOpenIdx((prev) => (prev === idx ? -1 : idx));
 
   return (
     <div className="packagePage">
@@ -130,7 +138,7 @@ const PackagePage = () => {
               <div className="packageHero__kicker">
                 <span className="pill pill--solid">
                   <FaIndustry />
-                    Bulk Seller Growth Engine
+                  Bulk Seller Growth Engine
                 </span>
                 <span className="pill pill--soft">
                   <FaCheckCircle /> Done-for-you
@@ -142,22 +150,28 @@ const PackagePage = () => {
 
               <h1 className="packageHero__title">
                 We help manufacturers and wholesalers get{" "}
-                <span>10 – 30 qualified bulk buyers</span> into their pipeline every month.
+                <span>10 – 30 qualified bulk buyers</span> into their pipeline
+                every month.
               </h1>
-            <br />
+              <br />
               {/* <p className="packageHero__subtitle">
                 Retail chains, distributors, or franchises — using done-for-you LinkedIn and email outreach.
               </p> */}
 
               <div className="packageHero__actions">
-                <a className="btnPrimary" href="#book_section">
+                <a
+                  className="btnPrimary"
+                  href="https://calendly.com/arslanjavedchang/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Book your call
                 </a>
                 <a className="btnGhost" href="#who_for">
                   See who it’s for
                 </a>
               </div>
-            <br />
+              <br />
 
               <div className="miniProof">
                 <div className="miniProof__item">
@@ -184,11 +198,24 @@ const PackagePage = () => {
                 </div>
 
                 <ul className="stickyCard__list">
-                  <li><span className="dot" /> ICP + Filters</li>
-                  <li><span className="dot" /> Decision-maker lists + Verification</li>
-                  <li><span className="dot" /> LinkedIn + Email sequences</li>
-                  <li><span className="dot" /> Reply qualification + Handoff</li>
-                  <li><span className="dot" /> Weekly optimization</li>
+                  <li>
+                    <span className="dot" /> Decision-maker lists + Verification
+                  </li>
+                  <li>
+                    <span className="dot" /> LinkedIn + Email sequences
+                  </li>
+                  <li>
+                    <span className="dot" /> 100% Deliverability
+                  </li>
+                  <li>
+                    <span className="dot" /> Reply qualification + Handoff
+                  </li>
+                  <li>
+                    <span className="dot" /> Weekly Optimization & Reports
+                  </li>
+                  <li>
+                    <span className="dot" /> Guaranteed Results
+                  </li>
                 </ul>
 
                 <div className="stickyCard__cta">
@@ -206,18 +233,23 @@ const PackagePage = () => {
         </section>
 
         {/* WHO THIS IS FOR */}
-                <p id="who_for"></p><br />
-        <br /><br />
+        <p id="who_for"></p>
+        <br />
+        <br />
+        <br />
 
         <section id="who" className="packageSection">
           <div className="sectionHead">
             {/* <h2>Who this is for</h2> */}
             <div className="centerHead">
-  <h2 className="centerHead__title">Who this is for</h2>
-  <span className="centerHead__underline" />
-</div>
+              <h2 className="centerHead__title">Who this is for</h2>
+              <span className="centerHead__underline" />
+            </div>
 
-            <p>Built specifically for bulk sellers who want predictable wholesale / retail conversations.</p>
+            <p>
+              Built specifically for bulk sellers who want predictable wholesale
+              / retail conversations.
+            </p>
           </div>
 
           <div className="twoCol">
@@ -235,7 +267,7 @@ const PackagePage = () => {
               <ul className="cleanList">
                 {whoFor.manufacturers.map((x) => (
                   <li key={x}>
-                    <FaCheckCircle /> {x}
+                    <span className="dot" /> {x}
                   </li>
                 ))}
               </ul>
@@ -255,7 +287,7 @@ const PackagePage = () => {
               <ul className="cleanList">
                 {whoFor.wholesalers.map((x) => (
                   <li key={x}>
-                    <FaCheckCircle /> {x}
+                    <span className="dot" /> {x}
                   </li>
                 ))}
               </ul>
@@ -268,19 +300,29 @@ const PackagePage = () => {
           <div className="sectionHead">
             {/* <h2>What we do (Done-for-you)</h2> */}
             <div className="centerHead">
-            <h2 className="centerHead__title">What we do (Done-for-you)</h2>
-            <span className="centerHead__underline" />
+              <h2 className="centerHead__title">What we do (Done-for-you)</h2>
+              <span className="centerHead__underline" />
             </div>
 
-            <p>Click each step to expand. Simple, structured, and designed for bulk buyers.</p>
+            <p>
+              Click each step to expand. Simple, structured, and designed for
+              bulk buyers.
+            </p>
           </div>
 
           <div className="accordion">
             {steps.map((s, idx) => {
               const isOpen = openIdx === idx;
               return (
-                <div className={`accItem ${isOpen ? "accItem--open" : ""}`} key={s.title}>
-                  <button className="accBtn" type="button" onClick={() => toggleAccordion(idx)}>
+                <div
+                  className={`accItem ${isOpen ? "accItem--open" : ""}`}
+                  key={s.title}
+                >
+                  <button
+                    className="accBtn"
+                    type="button"
+                    onClick={() => toggleAccordion(idx)}
+                  >
                     <span className="accIcon">{s.icon}</span>
 
                     <span className="accText">
@@ -288,13 +330,17 @@ const PackagePage = () => {
                       <span className="accDesc">{s.desc}</span>
                     </span>
 
-                    <span className={`accChevron ${isOpen ? "accChevron--up" : ""}`}>
+                    <span
+                      className={`accChevron ${isOpen ? "accChevron--up" : ""}`}
+                    >
                       <FaChevronDown />
                     </span>
                   </button>
 
                   <div className="accPanel">
-                    <ul className={`accList ${s.checks ? "accList--checks" : ""}`}>
+                    <ul
+                      className={`accList ${s.checks ? "accList--checks" : ""}`}
+                    >
                       {s.bullets.map((b) => (
                         <li key={b}>{b}</li>
                       ))}
@@ -311,8 +357,8 @@ const PackagePage = () => {
           <div className="sectionHead">
             {/* <h2>What you have to do</h2> */}
             <div className="centerHead">
-            <h2 className="centerHead__title">What you have to do</h2>
-            <span className="centerHead__underline" />
+              <h2 className="centerHead__title">What you have to do</h2>
+              <span className="centerHead__underline" />
             </div>
 
             <p>From your side, it’s simple. We run the system — you close.</p>
@@ -339,46 +385,54 @@ const PackagePage = () => {
               </ul>
             </div>
 
-                            <div className="infoCard infoCard--soft infoCard--danger">
-                <div className="infoCard__head">
-                    <div className="infoCard__icon infoCard__icon--muted">
-                    <FaTimes />
-                    </div>
-                    <div>
-                    <h3>No need to:</h3>
-                    <p>No heavy lift. No long contracts.</p>
-                    </div>
+            <div className="infoCard infoCard--soft infoCard--danger">
+              <div className="infoCard__head">
+                <div className="infoCard__icon infoCard__icon--muted">
+                  <FaTimes />
                 </div>
+                <div>
+                  <h3>No need to:</h3>
+                  <p>No heavy lift. No long contracts.</p>
+                </div>
+              </div>
 
-                <ul className="cleanList cleanList--muted">
-                    {yourSide.noNeed.map((x) => (
-                    <li key={x}>
-                        <FaTimes /> {x}
-                    </li>
-                    ))}
-                </ul>
-                </div>
-                </div>
+              <ul className="cleanList cleanList--muted">
+                {yourSide.noNeed.map((x) => (
+                  <li key={x}>
+                    <FaTimes /> {x}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </section>
 
         {/* CTA */}
-        <p id="pilot"></p><br />
-        <br /><br />
+        <p id="pilot"></p>
+        <br />
+        <br />
+        <br />
         <section id="cta" className="packageSection">
           <div className="ctaCard">
             <div className="ctaCard__left">
               <h2>Let’s run a 30-day pilot.</h2>
               <p>
-                If you’re a manufacturer or wholesaler and want more bulk buyers (retail chains,
-                distributors, or franchises), let’s run a 30-day pilot. If we don’t build you a clear
-                pipeline of qualified opportunities, you simply don’t continue.
+                If you’re a manufacturer or wholesaler and want more bulk buyers
+                (retail chains, distributors, or franchises), let’s run a 30-day
+                pilot. If we don’t build you a clear pipeline of qualified
+                opportunities, you simply don’t continue.
               </p>
 
               <div className="ctaCard__actions">
-                <a className="btnPrimary" href="#book_section">
-                    
+                <a
+                  className="btnPrimary"
+                  href="https://calendly.com/arslanjavedchang/30min?month=2025-08"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Book your call
                 </a>
+
                 <a className="btnGhost" href="#how">
                   Review what we do
                 </a>
@@ -388,39 +442,53 @@ const PackagePage = () => {
             <div className="ctaCard__right">
               <div className="ctaMini">
                 <div className="ctaMini__item">
-                  <span className="ctaMini__icon"><FaShieldAlt /></span>
+                  <span className="ctaMini__icon">
+                    <FaShieldAlt />
+                  </span>
                   <div>
                     <div className="ctaMini__title">De-risked guarantee</div>
-                    <div className="ctaMini__text">Work free or refund part of the fee if target isn’t hit.</div>
+                    <div className="ctaMini__text">
+                      Work free or refund part of the fee if target isn’t hit.
+                    </div>
                   </div>
                 </div>
 
                 <div className="ctaMini__item">
-                  <span className="ctaMini__icon"><FaClock /></span>
+                  <span className="ctaMini__icon">
+                    <FaClock />
+                  </span>
                   <div>
                     <div className="ctaMini__title">Fast timeline</div>
-                    <div className="ctaMini__text">Setup → launch → optimize → consistent pipeline by Day 30.</div>
+                    <div className="ctaMini__text">
+                      Setup → launch → optimize → consistent pipeline by Day 30.
+                    </div>
                   </div>
                 </div>
 
                 <div className="ctaMini__item">
-                  <span className="ctaMini__icon"><FaHandshake /></span>
+                  <span className="ctaMini__icon">
+                    <FaHandshake />
+                  </span>
                   <div>
-                    <div className="ctaMini__title">Qualified opportunities only</div>
-                    <div className="ctaMini__text">We count it only when there’s clear buying intent.</div>
+                    <div className="ctaMini__title">
+                      Qualified opportunities only
+                    </div>
+                    <div className="ctaMini__text">
+                      We count it only when there’s clear buying intent.
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <p id="book_section"></p><br />
-        <br /><br />
+        {/* <p id="book_section"></p><br /> */}
+        <br />
+        <br />
 
         {/* BOOKING */}
-        <section id="book" className="packageSection">
+        {/* <section id="book" className="packageSection">
           <div className="sectionHead">
-            {/* <h2>Book your call</h2> */}
             <div className="centerHead">
             <h2 className="centerHead__title">Book your call</h2>
             <span className="centerHead__underline" />
@@ -501,7 +569,7 @@ const PackagePage = () => {
               </div>
             </form>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />

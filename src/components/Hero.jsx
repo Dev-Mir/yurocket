@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link as ScrollLink } from 'react-scroll';
+import React from "react";
+import { Link as ScrollLink } from "react-scroll";
 import {
   FaClipboardCheck,
   FaChartLine,
   FaCalendarAlt,
   FaShieldAlt,
-} from 'react-icons/fa';
-import '../styles/Hero.css';
+} from "react-icons/fa";
+import "../styles/Hero.css";
 
 const Hero = () => {
   return (
@@ -19,18 +19,18 @@ const Hero = () => {
 
         <h1 className="hero__title">
           <span className="hero__title-part hero__title-part--1">
-            Book meetings on autopilot
+            Done-For-You
           </span>
           <br />
           <span className="hero__title-part hero__title-part--2">
-            <span>and</span> Protect Deliverability
+            <span>B2B Outbound</span> Lead Generation
           </span>
         </h1>
 
-
         <p className="hero__description">
-          We build and run outbound systems that generate pipeline for B2B teams.
-          Clean data, on-brand copy, multi-channel, and inboxes that stay healthy.
+          We build and run outbound systems that generate pipeline for B2B
+          teams. Clean data, on-brand copy, multi-channel, and inboxes that stay
+          healthy.
         </p>
 
         <div className="hero__cta">
@@ -61,15 +61,15 @@ const Hero = () => {
         <div className="hero__chips">
           <div className="hero__chip">
             <span className="hero__chip-icon" />
-            <span>DMARC, SPF, DKIM</span>
-          </div>
-          <div className="hero__chip">
-            <span className="hero__chip-icon" />
-            <span>Inbox Placement Tests</span>
-          </div>
-          <div className="hero__chip">
-            <span className="hero__chip-icon" />
             <span>Human-written Copy</span>
+          </div>
+          <div className="hero__chip">
+            <span className="hero__chip-icon" />
+            <span>List Building</span>
+          </div>
+          <div className="hero__chip">
+            <span className="hero__chip-icon" />
+            <span>Domain & Inbox Health</span>
           </div>
         </div>
       </div>

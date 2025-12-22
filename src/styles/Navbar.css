@@ -62,10 +62,10 @@
   color: #111827;
 }
 .logo__rocket {
-  color: #FEBC5E;
+  color: #febc5e;
 }
 .logo__dot {
-  color: #FEBC5E;
+  color: #febc5e;
 }
 
 /* ===== LINKS (DESKTOP) ===== */
@@ -100,7 +100,7 @@
   bottom: -6px;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #FEBC5E, #facc15);
+  background: linear-gradient(90deg, #febc5e, #facc15);
   transform-origin: center;
   transform: scaleX(0);
   transition: transform 0.2s ease;
@@ -122,7 +122,7 @@
   justify-content: center;
   padding: 14px 26px;
   border-radius: 18px;
-  background: linear-gradient(135deg, #FEBC5E, #FEBC5E);
+  background: linear-gradient(135deg, #febc5e, #febc5e);
   color: #ffffff;
   font-size: 16px;
   font-weight: 800;
@@ -133,7 +133,7 @@
 
 .navbar__cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 44px rgba(238, 127, 49, 0.45);
+  box-shadow: 0 5px 14px rgba(238, 127, 49, 0.45);
 }
 
 .navbar__cta--desktop {
@@ -239,8 +239,8 @@
 .modalOverlay,
 .modalCard,
 .modalCard * {
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
-    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 .modalOverlay {
@@ -338,12 +338,12 @@
 .input,
 .select {
   width: 90%;
-  height: 46px;                 /* MEDIUM (was 52) */
-  padding: 0 14px;              /* slightly tighter */
+  height: 46px; /* MEDIUM (was 52) */
+  padding: 0 14px; /* slightly tighter */
   border-radius: 14px;
   border: 1px solid rgba(209, 213, 219, 0.95);
   background: #ffffff;
-  font-size: 14.5px;            /* professional */
+  font-size: 14.5px; /* professional */
   font-weight: 600;
   outline: none;
   color: #0f172a;
@@ -385,14 +385,14 @@
 /* ✅ Button style stays premium */
 .continueBtn {
   min-width: 180px;
-  height: 48px;                 /* medium */
+  height: 48px; /* medium */
   border-radius: 16px;
   border: none;
   cursor: pointer;
   font-size: 15.5px;
   font-weight: 900;
   color: #fff;
-  background: linear-gradient(135deg, #FEBC5E, #FEBC5E);
+  background: linear-gradient(135deg, #febc5e, #febc5e);
   box-shadow: 0 18px 40px rgba(245, 158, 11, 0.35);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }

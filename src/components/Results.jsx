@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { FaCheckCircle } from 'react-icons/fa';
-import '../styles/Results.css';
+import React, { useEffect, useState } from "react";
+import { FaCheckCircle } from "react-icons/fa";
+import "../styles/Results.css";
 
 const Results = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -10,14 +10,14 @@ const Results = () => {
 
   // Lock scroll when modal open + ESC closes modal
   useEffect(() => {
-    if (isModalOpen) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = '';
+    if (isModalOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
 
     const onKeyDown = (e) => {
-      if (e.key === 'Escape') closeModal();
+      if (e.key === "Escape") closeModal();
     };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, [isModalOpen]);
 
   return (
@@ -70,7 +70,8 @@ const Results = () => {
           {/* Growth CTA */}
           <div id="growth-cta" className="results__cta">
             <h3 className="results__cta-title">
-              Ready to <span className="results__cta-highlight">skyrocket</span> your growth?
+              Ready to <span className="results__cta-highlight">skyrocket</span>{" "}
+              your growth?
             </h3>
             <p className="results__cta-sub">
               Partner with us to unlock new levels of performance and scale.
@@ -92,7 +93,17 @@ const Results = () => {
             </ul>
 
             {/* ✅ Button opens modal */}
-            <button type="button" className="results__cta-button" onClick={openModal}>
+            <button
+              type="button"
+              className="results__cta-button"
+              onClick={() =>
+                window.open(
+                  "https://calendly.com/arslanjavedchang/30min",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               <span className="results__cta-button-icon">📅</span>
               Book a Discovery Call
             </button>
@@ -102,31 +113,58 @@ const Results = () => {
 
       {/* ✅ SAME MODAL FORM (reuse your modal CSS) */}
       {isModalOpen && (
-        <div className="modalOverlay" onClick={closeModal} role="dialog" aria-modal="true">
+        <div
+          className="modalOverlay"
+          onClick={closeModal}
+          role="dialog"
+          aria-modal="true"
+        >
           <div className="modalCard" onClick={(e) => e.stopPropagation()}>
-            <button className="modalClose" onClick={closeModal} aria-label="Close">
+            <button
+              className="modalClose"
+              onClick={closeModal}
+              aria-label="Close"
+            >
               ×
             </button>
 
             <h2 className="modalTitle">Let us know more about your company</h2>
-            <p className="modalSubtitle">To see how YuRocket can boost your B2B sales</p>
+            <p className="modalSubtitle">
+              To see how YuRocket can boost your B2B sales
+            </p>
 
             <form className="modalForm">
               <div className="formGrid">
                 <div className="field">
-                  <input className="input" type="text" placeholder="First name" />
+                  <input
+                    className="input"
+                    type="text"
+                    placeholder="First name"
+                  />
                 </div>
 
                 <div className="field">
-                  <input className="input" type="text" placeholder="Last name" />
+                  <input
+                    className="input"
+                    type="text"
+                    placeholder="Last name"
+                  />
                 </div>
 
                 <div className="field">
-                  <input className="input" type="text" placeholder="Job title" />
+                  <input
+                    className="input"
+                    type="text"
+                    placeholder="Job title"
+                  />
                 </div>
 
                 <div className="field">
-                  <input className="input" type="email" placeholder="Business email" />
+                  <input
+                    className="input"
+                    type="email"
+                    placeholder="Business email"
+                  />
                 </div>
 
                 <div className="field">
@@ -138,12 +176,20 @@ const Results = () => {
                       <option value="+92">+92</option>
                       <option value="+971">+971</option>
                     </select>
-                    <input className="input" type="tel" placeholder="Phone number" />
+                    <input
+                      className="input"
+                      type="tel"
+                      placeholder="Phone number"
+                    />
                   </div>
                 </div>
 
                 <div className="field">
-                  <input className="input" type="text" placeholder="Company name" />
+                  <input
+                    className="input"
+                    type="text"
+                    placeholder="Company name"
+                  />
                 </div>
 
                 <div className="field">
@@ -205,8 +251,9 @@ const Results = () => {
                 </button>
 
                 <p className="consentText">
-                  By providing a telephone number and submitting this form you consent to be contacted by
-                  SMS text message. Message &amp; data rates may apply. Reply STOP to opt-out.
+                  By providing a telephone number and submitting this form you
+                  consent to be contacted by SMS text message. Message &amp;
+                  data rates may apply. Reply STOP to opt-out.
                 </p>
               </div>
             </form>

@@ -1,7 +1,7 @@
 /* Section shell */
 .services {
   padding: 16px 20px;
-  background: #fffaf2; /* soft warm background */
+  background: #fffdf9; /* soft warm background */
 }
 
 .services__inner {
@@ -24,13 +24,13 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -6px;              /* distance under the text */
-  width: 100%;               /* full width of the heading text */
+  bottom: -6px; /* distance under the text */
+  width: 100%; /* full width of the heading text */
   height: 3px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #FEBC5E, #FEBC5E);
+  background: linear-gradient(90deg, #febc5e, #febc5e);
   transform-origin: center;
-  transform: scaleX(0);      /* invisible initially */
+  transform: scaleX(0); /* invisible initially */
   transition: transform 0.25s ease-in-out;
 }
 
@@ -104,7 +104,7 @@
 
 .service-card__icon {
   font-size: 28px;
-  color: #FEBC5E;
+  color: #febc5e;
 }
 
 /* Text */

@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  FaPhoneAlt,
-  FaCogs,
-  FaPaperPlane,
-  FaChartLine,
-} from "react-icons/fa";
+import { FaPhoneAlt, FaCogs, FaPaperPlane, FaChartLine } from "react-icons/fa";
 import "../styles/Process.css";
 
 const steps = [

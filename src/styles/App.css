@@ -1,13 +1,13 @@
 body {
   font-family: Arial, sans-serif;
   /* background-color: #fdf6e9;  prevoius color */
-    background-color: #fffaf2;  /* beige stays */
-    /* width: 100%; */
+  background-color: #fffdf9; /* beige stays */
+  /* width: 100%; */
 
   margin: 0;
 }
 
 .App {
-  background-color: #fffaf2;
+  background-color: #fffdf9;
   min-height: 100vh;
 }

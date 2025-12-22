@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
   max-width: 1200px;
-  background: #fffaf2;
+  background: #fffdf9;
   margin: 0 auto;
   padding: 120px 20px 80px; /* extra top space for fixed navbar */
   text-align: center;
@@ -15,9 +15,16 @@
   position: absolute;
   inset: 0;
   transform: translateY(-40px);
-  background:
-    radial-gradient(circle at top left, rgba(255, 184, 108, 0.28), transparent 55%),
-    radial-gradient(circle at top right, rgba(255, 237, 213, 0.8), transparent 60%);
+  background: radial-gradient(
+      circle at top left,
+      rgba(255, 184, 108, 0.28),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(255, 237, 213, 0.8),
+      transparent 60%
+    );
   opacity: 0.8;
   z-index: -2;
 }
@@ -49,7 +56,7 @@
 }
 
 .hero__title {
-  font-size: 64px;
+  font-size: 54px;
   font-weight: 800;
   color: #111827;
   margin: 0 0 20px;
@@ -58,7 +65,7 @@
 
 /* Base title styling (keep what you already have) */
 .hero__title {
-  font-size: 64px;
+  font-size: 58px;
   font-weight: 800;
   color: #111827;
   margin: 0 0 20px;
@@ -71,14 +78,14 @@
 }
 
 .hero__title span span {
-  color: #FEBC5E; /* inner <span> "and" stays orange */
+  color: #febc5e; /* inner <span> "and" stays orange */
 }
 
 /* --- WIPE ANIMATION --- */
 .hero__title-part {
   display: inline-block;
   position: relative;
-  overflow: hidden;          /* hide text while it wipes in */
+  overflow: hidden; /* hide text while it wipes in */
   opacity: 0;
   animation: heroTitleWipe 0.8s ease-out forwards;
 }
@@ -94,18 +101,16 @@
 @keyframes heroTitleWipe {
   0% {
     opacity: 0;
-    clip-path: inset(0 100% 0 0);   /* fully hidden from right side */
+    clip-path: inset(0 100% 0 0); /* fully hidden from right side */
   }
   40% {
     opacity: 1;
   }
   100% {
     opacity: 1;
-    clip-path: inset(0 0 0 0);      /* fully revealed */
+    clip-path: inset(0 0 0 0); /* fully revealed */
   }
 }
-
-
 
 .hero__description {
   font-size: 18px;
@@ -125,7 +130,7 @@
 }
 
 .hero__button {
-  background-color: #FEBC5E;
+  background-color: #febc5e;
   color: #ffffff;
   padding: 14px 28px;
   border-radius: 999px;
@@ -137,16 +142,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition:
-    background-color 0.25s ease,
-    box-shadow 0.25s ease,
+  transition: background-color 0.25s ease, box-shadow 0.25s ease,
     transform 0.15s ease;
-  box-shadow: 0 14px 32px rgba(249, 115, 22, 0.35);
+  /* box-shadow: 0 14px 32px rgba(249, 115, 22, 0.35); */
 }
 
 /* Slight pulse on primary CTA */
 .hero__button--primary {
-  animation: hero-cta-pulse 0.5s ease-in-out infinite;
+  animation: hero-cta-pulse 1s ease-in-out infinite;
 }
 
 @keyframes hero-cta-pulse {
@@ -165,7 +168,7 @@
 }
 
 .hero__button:hover {
-  background-color: #FEBC5E;
+  background-color: #febc5e;
   transform: translateY(-1px);
 }
 
@@ -206,7 +209,7 @@
   height: 20px;
   margin-right: 8px;
   border-radius: 50%;
-  border: 1px solid #FEBC5E;
+  border: 1px solid #febc5e;
   box-sizing: border-box;
   position: relative;
 }
@@ -216,7 +219,7 @@
   position: absolute;
   inset: 4px;
   border-radius: 50%;
-  background: #FEBC5E;
+  background: #febc5e;
 }
 
 /* ---------- Trusted logos + metrics ---------- */
@@ -259,7 +262,8 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .hero__logo-card img {
@@ -312,7 +316,7 @@
   right: 10%;
   height: 6px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #FEBC5E, #facc15);
+  background: linear-gradient(90deg, #febc5e, #facc15);
 }
 
 /* icon pill */
@@ -320,7 +324,7 @@
   margin-top: 26px;
   margin-bottom: 16px;
   font-size: 28px;
-  color: #FEBC5E;
+  color: #febc5e;
   background: #fff7ed;
   border-radius: 20px;
   padding: 14px;
@@ -350,7 +354,7 @@
 /* ---------- Responsive tweaks ---------- */
 
 @media (max-width: 992px) {
-   .hero {
+  .hero {
     padding: 100px 16px 60px;
   }
 
@@ -377,16 +381,15 @@
     padding: 100px 16px 60px;
   }
 
-  
   .hero__content,
   .hero__trusted {
     border-radius: 22px;
   }
 
- .hero__title {
+  .hero__title {
     font-size: 34px;
   }
-  
+
   .hero__description {
     font-size: 16px;
   }
