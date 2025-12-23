@@ -141,13 +141,13 @@ const PackagePage = () => {
   const yourSide = useMemo(
     () => ({
       do: [
-        "Spend 60–90 minutes on one onboarding call (products, pricing, ideal partner).",
+        "Spend 60-90 minutes on one onboarding call (products, pricing, ideal partner).",
         "Approve targeting & messaging once.",
         "Show up to calls and close deals.",
       ],
       noNeed: [
         "Learn tools, hire SDRs, buy data platforms, or manage outreach.",
-        "Commit to a long contract — we start with a simple 30-day pilot.",
+        "Commit to a long contract - we start with a simple 30-day pilot.",
       ],
     }),
     []

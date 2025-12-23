@@ -153,18 +153,20 @@
   animation: hero-cta-pulse 1s ease-in-out infinite;
 }
 
+
+
 @keyframes hero-cta-pulse {
   0% {
     transform: translateY(0);
-    box-shadow: 0 14px 32px rgba(249, 115, 22, 0.35);
+    /* box-shadow: 0 14px 32px rgba(249, 115, 22, 0.35); */
   }
   50% {
     transform: translateY(-2px);
-    box-shadow: 0 22px 45px rgba(249, 115, 22, 0.45);
+    /* box-shadow: 0 22px 45px rgba(249, 115, 22, 0.45); */
   }
   100% {
     transform: translateY(0);
-    box-shadow: 0 14px 32px rgba(249, 115, 22, 0.35);
+    /* box-shadow: 0 14px 32px rgba(  249, 115, 22, 0.35); */
   }
 }
 
@@ -184,6 +186,13 @@
   background-color: #111827;
   color: #ffffff;
 }
+.hero__button--primary:hover {
+
+      box-shadow: 0 10px 20px rgba(249, 115, 22, 0.35);
+
+
+}
+
 
 /* Feature chips */
 .hero__chips {

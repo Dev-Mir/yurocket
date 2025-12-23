@@ -7,13 +7,13 @@ const faqItems = [
     id: 1,
     question: "What makes YuRocket different from other lead gen agencies?",
     answer:
-      "We’re deliverability-first and full-stack. Clean ICP + lists, human-written copy, multi-variant testing, and day-to-day inbox health (SPF/DKIM/DMARC, warm-up, seeds, blacklist monitoring). You get strategy, execution, and reporting in one team—without spammy tactics.",
+      "We’re deliverability-first and full-stack. Clean ICP + lists, human-written copy, multi-variant testing, and day-to-day inbox health (SPF/DKIM/DMARC, warm-up, seeds, blacklist monitoring). You get strategy, execution, and reporting in one team without spammy tactics.",
   },
   {
     id: 2,
     question: "How many B2B leads will I get?",
     answer:
-      "Volume depends on ICP size, offer strength, and sending limits. We typically book 10–30 qualified meetings per month once the program is ramped and stable. We prioritize quality over raw volume, and we share weekly reporting so you see exactly what’s happening.",
+      "Volume depends on ICP size, offer strength, and sending limits. We typically book 10-30 qualified meetings per month once the program is ramped and stable. We prioritize quality over raw volume, and we share weekly reporting so you see exactly what’s happening.",
   },
   {
     id: 3,
@@ -37,13 +37,13 @@ const faqItems = [
     id: 6,
     question: "How long before I see results?",
     answer:
-      "We launch quickly—technical setup and messaging in Week 1–2, live sending shortly after. You’ll typically see replies in the first 1–2 weeks post-launch and first meetings in 2–4 weeks, then scale from there.",
+      "We launch quickly-technical setup and messaging in Week 1-2, live sending shortly after. You’ll typically see replies in the first 1-2 weeks post-launch and first meetings in 2-4 weeks, then scale from there.",
   },
   {
     id: 7,
     question: "Why wouldn't I just hire a full-time SDR?",
     answer:
-      "Cost, time, and specialization. A full-time SDR needs recruiting, training, tooling, management—and usually still won’t handle deliverability, data engineering, testing, and automation. With YuRocket you get a complete outbound engine on day one.",
+      "Cost, time, and specialization. A full-time SDR needs recruiting, training, tooling, management, and usually still won’t handle deliverability, data engineering, testing, and automation. With YuRocket you get a complete outbound engine on day one.",
   },
 ];
 

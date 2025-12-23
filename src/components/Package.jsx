@@ -76,7 +76,7 @@ const Package = () => {
     {
       icon: <FaLayerGroup />,
       title: "Diversified Sales Experience",
-      desc: "Our team leverages Meta Ads, LinkedIn, Email, Google Ads, and AI marketing for a comprehensive outreach strategy tailored to your business.",
+      desc: "Our team leverages Meta Ads, LinkedIn, Email, and AI marketing for a comprehensive outreach strategy specialized to your business.",
     },
     {
       icon: <FaShieldAlt />,
@@ -114,7 +114,7 @@ const Package = () => {
 
           <p className="packagesBenefitsY__subtitle">
             You get a full team, the right channel strategy, and guaranteed
-            accountability — without tool costs or complexity.
+            accountability  without tool costs or complexity.
           </p>
 
           <div className="packagesBenefitsY__grid">
@@ -148,7 +148,7 @@ const Package = () => {
 
             <p className="packages__desc">
               We help manufacturers and wholesalers get{" "}
-              <strong>10–30 qualified bulk buyers</strong> (retail chains,
+              <strong>10-30 qualified bulk buyers</strong> (retail chains,
               distributors, or franchises) into their pipeline every month using
               done-for-you LinkedIn and email outreach.
             </p>

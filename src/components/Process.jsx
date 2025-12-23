@@ -25,7 +25,7 @@ const steps = [
     id: "04",
     icon: <FaChartLine />,
     title: "Optimize → Scale",
-    text: "Weekly iteration on ICP, messaging, and cadences to lift reply rate and then scale what works safely.",
+    text: "Weekly iteration on ICP, messaging, and cadences to lift reply rate then scale what works safely.",
   },
 ];
 
