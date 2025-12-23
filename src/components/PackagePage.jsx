@@ -1,6 +1,5 @@
 import React, { useMemo, useState, useEffect } from "react";
 import {
-  FaRocket,
   FaCheckCircle,
   FaHandshake,
   FaBullseye,
@@ -11,9 +10,10 @@ import {
   FaChevronDown,
   FaClipboardList,
   FaTimes,
-  FaCircle,
 } from "react-icons/fa";
 import { FaIndustry } from "react-icons/fa";
+import { useLocation, useNavigate } from "react-router-dom";
+import { scroller } from "react-scroll";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -22,10 +22,44 @@ import "../styles/PackagePage.css";
 
 const PackagePage = () => {
   const [openIdx, setOpenIdx] = useState();
+  const location = useLocation();
+  const navigate = useNavigate();
 
+  // Map URL -> section id (works even if your site is under /yurocket because of endsWith)
+  const getTargetSectionFromPath = (pathname) => {
+    if (pathname.endsWith("/package/who_for")) return "who_for";
+    if (pathname.endsWith("/package/how")) return "how";
+    if (pathname.endsWith("/package/pilot")) return "pilot";
+    return null; // plain /package
+  };
+
+  // On route change: scroll to target section (or top for /package)
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    const target = getTargetSectionFromPath(location.pathname);
+
+    if (!target) {
+      window.scrollTo({ top: 0, behavior: "auto" });
+      return;
+    }
+
+    // small delay so DOM is ready
+    setTimeout(() => {
+      scroller.scrollTo(target, { smooth: true, duration: 500, offset: -80 });
+    }, 50);
+  }, [location.pathname]);
+
+  const goToPackageSection = (segment, targetId) => {
+    const nextPath = `/package/${segment}`;
+
+    // If already on that route, just scroll again
+    if (location.pathname.endsWith(nextPath)) {
+      scroller.scrollTo(targetId, { smooth: true, duration: 500, offset: -80 });
+      return;
+    }
+
+    // Navigate to the route; useEffect will scroll
+    navigate(nextPath);
+  };
 
   const whoFor = useMemo(
     () => ({
@@ -34,11 +68,7 @@ const PackagePage = () => {
         "Distributors",
         "Large retail / franchise partners around the globe",
       ],
-      wholesalers: [
-        "Big retailers",
-        "Franchise chains",
-        "Large e-commerce resellers",
-      ],
+      wholesalers: ["Big retailers", "Franchise chains", "Large e-commerce resellers"],
     }),
     []
   );
@@ -123,8 +153,7 @@ const PackagePage = () => {
     []
   );
 
-  const toggleAccordion = (idx) =>
-    setOpenIdx((prev) => (prev === idx ? -1 : idx));
+  const toggleAccordion = (idx) => setOpenIdx((prev) => (prev === idx ? -1 : idx));
 
   return (
     <div className="packagePage">
@@ -150,13 +179,9 @@ const PackagePage = () => {
 
               <h1 className="packageHero__title">
                 We help manufacturers and wholesalers get{" "}
-                <span>10 – 30 qualified bulk buyers</span> into their pipeline
-                every month.
+                <span>10 – 30 qualified bulk buyers</span> into their pipeline every month.
               </h1>
               <br />
-              {/* <p className="packageHero__subtitle">
-                Retail chains, distributors, or franchises — using done-for-you LinkedIn and email outreach.
-              </p> */}
 
               <div className="packageHero__actions">
                 <a
@@ -167,10 +192,16 @@ const PackagePage = () => {
                 >
                   Book your call
                 </a>
-                <a className="btnGhost" href="#who_for">
+
+                <button
+                  type="button"
+                  className="btnGhost"
+                  onClick={() => goToPackageSection("who_for", "who_for")}
+                >
                   See who it’s for
-                </a>
+                </button>
               </div>
+
               <br />
 
               <div className="miniProof">
@@ -219,13 +250,14 @@ const PackagePage = () => {
                 </ul>
 
                 <div className="stickyCard__cta">
-                  <a className="btnPrimary btnPrimary--full" href="#pilot">
+                  <button
+                    type="button"
+                    className="btnPrimary btnPrimary--full"
+                    onClick={() => goToPackageSection("pilot", "pilot")}
+                  >
                     Start a 30-day pilot
-                  </a>
+                  </button>
                   <br />
-                  {/* <p className="stickyCard__note">
-                    If there’s no clear pipeline of qualified opportunities, you simply don’t continue.
-                  </p> */}
                 </div>
               </div>
             </aside>
@@ -240,15 +272,13 @@ const PackagePage = () => {
 
         <section id="who" className="packageSection">
           <div className="sectionHead">
-            {/* <h2>Who this is for</h2> */}
             <div className="centerHead">
               <h2 className="centerHead__title">Who this is for</h2>
               <span className="centerHead__underline" />
             </div>
 
             <p>
-              Built specifically for bulk sellers who want predictable wholesale
-              / retail conversations.
+              Built specifically for bulk sellers who want predictable wholesale / retail conversations.
             </p>
           </div>
 
@@ -298,15 +328,13 @@ const PackagePage = () => {
         {/* WHAT WE DO */}
         <section id="how" className="packageSection">
           <div className="sectionHead">
-            {/* <h2>What we do (Done-for-you)</h2> */}
             <div className="centerHead">
               <h2 className="centerHead__title">What we do (Done-for-you)</h2>
               <span className="centerHead__underline" />
             </div>
 
             <p>
-              Click each step to expand. Simple, structured, and designed for
-              bulk buyers.
+              Click each step to expand. Simple, structured, and designed for bulk buyers.
             </p>
           </div>
 
@@ -314,15 +342,8 @@ const PackagePage = () => {
             {steps.map((s, idx) => {
               const isOpen = openIdx === idx;
               return (
-                <div
-                  className={`accItem ${isOpen ? "accItem--open" : ""}`}
-                  key={s.title}
-                >
-                  <button
-                    className="accBtn"
-                    type="button"
-                    onClick={() => toggleAccordion(idx)}
-                  >
+                <div className={`accItem ${isOpen ? "accItem--open" : ""}`} key={s.title}>
+                  <button className="accBtn" type="button" onClick={() => toggleAccordion(idx)}>
                     <span className="accIcon">{s.icon}</span>
 
                     <span className="accText">
@@ -330,17 +351,13 @@ const PackagePage = () => {
                       <span className="accDesc">{s.desc}</span>
                     </span>
 
-                    <span
-                      className={`accChevron ${isOpen ? "accChevron--up" : ""}`}
-                    >
+                    <span className={`accChevron ${isOpen ? "accChevron--up" : ""}`}>
                       <FaChevronDown />
                     </span>
                   </button>
 
                   <div className="accPanel">
-                    <ul
-                      className={`accList ${s.checks ? "accList--checks" : ""}`}
-                    >
+                    <ul className={`accList ${s.checks ? "accList--checks" : ""}`}>
                       {s.bullets.map((b) => (
                         <li key={b}>{b}</li>
                       ))}
@@ -355,7 +372,6 @@ const PackagePage = () => {
         {/* WHAT YOU HAVE TO DO */}
         <section className="packageSection">
           <div className="sectionHead">
-            {/* <h2>What you have to do</h2> */}
             <div className="centerHead">
               <h2 className="centerHead__title">What you have to do</h2>
               <span className="centerHead__underline" />
@@ -412,15 +428,15 @@ const PackagePage = () => {
         <br />
         <br />
         <br />
+
         <section id="cta" className="packageSection">
           <div className="ctaCard">
             <div className="ctaCard__left">
               <h2>Let’s run a 30-day pilot.</h2>
               <p>
-                If you’re a manufacturer or wholesaler and want more bulk buyers
-                (retail chains, distributors, or franchises), let’s run a 30-day
-                pilot. If we don’t build you a clear pipeline of qualified
-                opportunities, you simply don’t continue.
+                If you’re a manufacturer or wholesaler and want more bulk buyers (retail chains,
+                distributors, or franchises), let’s run a 30-day pilot. If we don’t build you a clear
+                pipeline of qualified opportunities, you simply don’t continue.
               </p>
 
               <div className="ctaCard__actions">
@@ -433,9 +449,13 @@ const PackagePage = () => {
                   Book your call
                 </a>
 
-                <a className="btnGhost" href="#how">
+                <button
+                  type="button"
+                  className="btnGhost"
+                  onClick={() => goToPackageSection("how", "how")}
+                >
                   Review what we do
-                </a>
+                </button>
               </div>
             </div>
 
@@ -470,9 +490,7 @@ const PackagePage = () => {
                     <FaHandshake />
                   </span>
                   <div>
-                    <div className="ctaMini__title">
-                      Qualified opportunities only
-                    </div>
+                    <div className="ctaMini__title">Qualified opportunities only</div>
                     <div className="ctaMini__text">
                       We count it only when there’s clear buying intent.
                     </div>
@@ -482,94 +500,9 @@ const PackagePage = () => {
             </div>
           </div>
         </section>
-        {/* <p id="book_section"></p><br /> */}
+
         <br />
         <br />
-
-        {/* BOOKING */}
-        {/* <section id="book" className="packageSection">
-          <div className="sectionHead">
-            <div className="centerHead">
-            <h2 className="centerHead__title">Book your call</h2>
-            <span className="centerHead__underline" />
-            </div>
-
-            <p>Share a few details and we’ll tell you if this is a fit (no fluff).</p>
-          </div>
-
-          <div className="formCard">
-            <form className="pageForm">
-              <div className="pageForm__grid">
-                <input className="pageInput" placeholder="First name" />
-                <input className="pageInput" placeholder="Last name" />
-                <input className="pageInput" placeholder="Job title" />
-                <input className="pageInput" placeholder="Business email" type="email" />
-
-                <div className="pagePhone">
-                  <select className="pageSelect" defaultValue="+92">
-                    <option value="+1">+1</option>
-                    <option value="+44">+44</option>
-                    <option value="+61">+61</option>
-                    <option value="+92">+92</option>
-                    <option value="+971">+971</option>
-                  </select>
-                  <input className="pageInput phone" placeholder="Phone number" type="tel" />
-                </div>
-
-                <input className="pageInput" placeholder="Company name" />
-
-                <select className="pageSelect" defaultValue="">
-                  <option value="" disabled>Company size</option>
-                  <option>1–10</option>
-                  <option>11–50</option>
-                  <option>51–200</option>
-                  <option>201–500</option>
-                  <option>501–1000</option>
-                  <option>1000+</option>
-                </select>
-
-                <select className="pageSelect" defaultValue="">
-                  <option value="" disabled>Available monthly budget</option>
-                  <option>$500–$1,500</option>
-                  <option>$1,500–$3,000</option>
-                  <option>$3,000–$5,000</option>
-                  <option>$5,000–$10,000</option>
-                  <option>$10,000+</option>
-                </select>
-
-                <select className="pageSelect" defaultValue="Pakistan">
-                  <option>Pakistan</option>
-                  <option>United States</option>
-                  <option>United Kingdom</option>
-                  <option>UAE</option>
-                  <option>Canada</option>
-                  <option>Germany</option>
-                </select>
-
-                <select className="pageSelect" defaultValue="">
-                  <option value="" disabled>Industry</option>
-                  <option>Manufacturing</option>
-                  <option>Wholesale / Distribution</option>
-                  <option>Software / SaaS</option>
-                  <option>Ecommerce</option>
-                  <option>Agency</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div className="pageForm__bottom">
-                <button type="button" className="btnPrimary">
-                  Continue
-                </button>
-
-                <p className="pageConsent">
-                  By providing a telephone number and submitting this form you consent to be contacted by
-                  SMS text message. Message &amp; data rates may apply. Reply STOP to opt-out.
-                </p>
-              </div>
-            </form>
-          </div>
-        </section> */}
       </main>
 
       <Footer />

@@ -36,11 +36,12 @@
 }
 
 .logo {
-  color: #febc5e;
+    color: #111827;
+
 }
 
 .logoRocket {
-  color: #111827;
+  color: #febc5e;
 }
 
 .footer__tagline {

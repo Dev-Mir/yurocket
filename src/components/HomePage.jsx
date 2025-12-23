@@ -156,6 +156,12 @@ const HomePage = () => {
     };
   }, [navigate]);
 
+  useEffect(() => {
+  document.title = "yurocket";
+  // keep your existing scroll logic here...
+}, []);
+
+
   return (
     <div className="App">
       <Navbar />

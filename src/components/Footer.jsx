@@ -58,8 +58,8 @@ const Footer = () => {
               type="button"
             >
               <div className="footer__logo">
-                <span className="logo">Yu</span>
-                <span className="logoRocket">Rocket</span>
+                <span className="logo">yu</span>
+                <span className="logoRocket">rocket</span>
               </div>
             </button>
 
@@ -199,21 +199,32 @@ const Footer = () => {
               </button>
             </span>
           </div>
-
           <button
             className="back-to-top"
             onClick={() => {
-              // On HomePage (any of its section routes): scroll to home section.
-              // On other pages: just scroll to top of that page.
+              const HOME_PATH = SECTION_TO_PATH.home; // "/"
+
+              // If we're on any HomePage section route (including /offer),
+              // force URL back to "/" when going to top.
               if (isHomeSectionRoute) {
+                if (location.pathname !== HOME_PATH) {
+                  navigate(HOME_PATH, {
+                    replace: true,
+                    state: { scrollTo: "home" },
+                  });
+                  return;
+                }
+
                 scroller.scrollTo("home", {
                   smooth: true,
                   duration: 500,
                   offset: -80,
                 });
-              } else {
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                return;
               }
+
+              // other pages: just scroll to top of that page
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             type="button"
           >

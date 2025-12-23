@@ -9,22 +9,25 @@ import "./styles/App.css";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
+
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<HomePage />} />
         <Route path="/process" element={<HomePage />} />
         <Route path="/results" element={<HomePage />} />
         <Route path="/faq" element={<HomePage />} />
-
-        {/* IMPORTANT:
-   You already use /package for PackagePage.
-   So use /pricing (or /offer) for the "package" SECTION on homepage. */}
         <Route path="/offer" element={<HomePage />} />
 
-        <Route path="/package" element={<PackagePage />} />
+        {/* <Route path="/package" element={<PackagePage />} /> */}
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
+
+        <Route path="/package" element={<PackagePage />} />
+        <Route path="/package/who_for" element={<PackagePage />} />
+        <Route path="/package/how" element={<PackagePage />} />
+        <Route path="/package/pilot" element={<PackagePage />} />
+        
       </Routes>
     </BrowserRouter>
   );

@@ -7,6 +7,12 @@ import {
   FaShieldAlt,
 } from "react-icons/fa";
 import "../styles/Hero.css";
+import hk from "./Clients/HK.png";
+import holistic from "./Clients/Holistic.png";
+import stinger from "./Clients/Stringer.png";
+import groveTech from "./Clients/GroveTech.png";
+import toucon from "./Clients/toucon.png";
+
 
 const Hero = () => {
   return (
@@ -81,19 +87,19 @@ const Hero = () => {
         <div className="hero__trusted-box">
           <div className="hero__logos-row">
             <div className="hero__logo-card">
-              <img src="src/assets/HK.png" alt="HK" />
+              <img src={hk} alt="HK" />
             </div>
             <div className="hero__logo-card">
-              <img src="src/assets/Holistic.png" alt="Holistic" />
+              <img src={holistic} alt="Holistic" />
             </div>
             <div className="hero__logo-card">
-              <img src="src/assets/Stringer.png" alt="Stinger" />
+              <img src={stinger} alt="Stinger" />
             </div>
             <div className="hero__logo-card">
-              <img src="src/assets/GroveTech.png" alt="GroveTech" />
+              <img src={groveTech} alt="GroveTech" />
             </div>
             <div className="hero__logo-card">
-              <img src="src/assets/toucon.png" alt="toucon" />
+              <img src={toucon} alt="toucon" />
             </div>
           </div>
         </div>
@@ -124,7 +130,7 @@ const Hero = () => {
           <div className="hero__metric-card">
             <div className="hero__metric-topline" />
             <FaCalendarAlt className="hero__metric-icon hero__metric-icon--calendar" />
-            <p className="hero__metric-number">10–30</p>
+            <p className="hero__metric-number">10 - 30</p>
             <p className="hero__metric-label">Qualified meetings / month</p>
             <p className="hero__metric-sub">typical after ramp</p>
           </div>

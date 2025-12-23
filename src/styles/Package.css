@@ -165,29 +165,42 @@
   letter-spacing: 0.2px;
 }
 
-/* Points with better bullet icon */
+/* FIX bullet overlap: reserve space + place bullet consistently */
 .packages__point {
   position: relative;
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 12px;
-  padding: 14px 14px 14px 46px;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 14px;
+
+  /* reserve space for bullet on the left */
+  padding: 12px 14px 12px 46px;
+
+  /* text */
   font-size: 14px;
-  color: #111;
   line-height: 1.35;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
+  color: #111827;
+
+  /* nice card feel */
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+  min-width: 0;
 }
 
-/* Colored bullet icon */
 .packages__bullet {
   position: absolute;
-  left: 16px;
-  top: 18px;
-  width: 18px;
-  height: 18px;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 10px;
+  height: 10px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #febc5e, #ff9f2f);
-  box-shadow: 0 10px 20px rgba(254, 188, 94, 0.28);
+  background: #febc5e;
+
+  /* soft ring like before */
+  box-shadow: 0 0 0 4px rgba(254, 188, 94, 0.22);
+
+  /* never shrink, never affect layout */
+  pointer-events: none;
 }
 
 .packages__bullet::after {
@@ -787,4 +800,142 @@
 
 .footer__legalLink::after {
   bottom: -3px; /* slightly tighter underline position */
+}
+
+
+/* =========================================================
+   FIX: "Manufacturers / Wholesalers" list grid (Package.jsx)
+   - Desktop: 2-column table style
+   - Mobile: reorders items so lists don't mix
+   ========================================================= */
+
+.packages__right {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Desktop/table layout */
+.packages__rightGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.packages__colHeader {
+  background: #fff3dc;
+  border: 1px solid rgba(254, 188, 94, 0.35);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.packages__colHeaderTitle {
+  display: block;
+  font-weight: 800;
+  font-size: 12px;
+  color: #111827;
+  line-height: 1.2;
+}
+
+/* FIX bullet overlap: reserve space + place bullet consistently */
+.packages__point {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 14px;
+
+  /* reserve space for bullet on the left */
+  padding: 12px 14px 12px 46px;
+
+  /* text */
+  font-size: 14px;
+  line-height: 1.35;
+  color: #111827;
+
+  /* nice card feel */
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+  min-width: 0;
+}
+
+.packages__bullet {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #febc5e;
+
+  /* soft ring like before */
+  box-shadow: 0 0 0 4px rgba(254, 188, 94, 0.22);
+
+  /* never shrink, never affect layout */
+  pointer-events: none;
+}
+
+/* Mobile: stack as two separate groups (NO mixing) */
+@media (max-width: 768px) {
+  .packages__rightGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Current child order inside .packages__rightGrid:
+     1: Header Manufacturers
+     2: Header Wholesalers
+     3: M1 (Wholesalers)
+     4: W1 (Big retailers)
+     5: M2 (Distributors)
+     6: W2 (Franchise chains)
+     7: M3 (Large retail / franchise partners...)
+     8: W3 (Large e-commerce resellers)
+  */
+
+  .packages__rightGrid > :nth-child(1) { grid-row: 1; }
+  .packages__rightGrid > :nth-child(3) { grid-row: 2; }
+  .packages__rightGrid > :nth-child(5) { grid-row: 3; }
+  .packages__rightGrid > :nth-child(7) { grid-row: 4; }
+
+  .packages__rightGrid > :nth-child(2) { grid-row: 5; margin-top: 6px; }
+  .packages__rightGrid > :nth-child(4) { grid-row: 6; }
+  .packages__rightGrid > :nth-child(6) { grid-row: 7; }
+  .packages__rightGrid > :nth-child(8) { grid-row: 8; }
+
+  /* Slightly tighter spacing on very small screens */
+  .packages__point { padding: 11px 12px; }
+}
+/* Mobile: stack as two separate groups (NO mixing) */
+@media (max-width: 768px) {
+  .packages__rightGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Re-order so Manufacturers items stay together, then Wholesalers */
+  .packages__rightGrid > :nth-child(1) { grid-row: 1; }
+  .packages__rightGrid > :nth-child(3) { grid-row: 2; }
+  .packages__rightGrid > :nth-child(5) { grid-row: 3; }
+  .packages__rightGrid > :nth-child(7) { grid-row: 4; }
+
+  .packages__rightGrid > :nth-child(2) { grid-row: 5; margin-top: 10px; }
+  .packages__rightGrid > :nth-child(4) { grid-row: 6; }
+  .packages__rightGrid > :nth-child(6) { grid-row: 7; }
+  .packages__rightGrid > :nth-child(8) { grid-row: 8; }
+
+  /* ✅ IMPORTANT: keep bullet space on mobile */
+  .packages__point {
+    padding: 12px 14px 12px 44px; /* keep left space for bullet */
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* ✅ Make bullet look nice on mobile (no weird vertical centering) */
+  .packages__bullet {
+    left: 16px;
+    top: 18px;          /* align with first line */
+    transform: none;    /* disable centering */
+    box-shadow: 0 0 0 3px rgba(254, 188, 94, 0.22);
+  }
 }
