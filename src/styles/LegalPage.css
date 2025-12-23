@@ -283,7 +283,7 @@
 
 @media (max-width: 480px) {
   .legalPage__updated {
-    width: 100%;
+    width: 90%;
     justify-content: center;
   }
 
