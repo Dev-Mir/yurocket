@@ -13,20 +13,33 @@ import stinger from "./Clients/Stringer.png";
 import groveTech from "./Clients/GroveTech.png";
 import toucon from "./Clients/toucon.png";
 
+import wishpond from "./Clients/wishpond.png";
+import PBN from "./Clients/PBN.png";
+import WGL from "./Clients/WGL.png";
+
+
+const trustedLogos = [
+  { src: hk, alt: "HK" },
+  { src: holistic, alt: "Holistic" },
+  { src: stinger, alt: "Stinger" },
+  { src: groveTech, alt: "GroveTech" },
+  { src: toucon, alt: "Toucon" },
+  
+  { src: wishpond, alt: "wishpond" },
+  { src: PBN, alt: "PBN" },
+  { src: WGL, alt: "WGL" },
+  
+];
 
 const Hero = () => {
   return (
     <section className="hero" id="home">
       <div className="hero__content">
         {/* Top badge */}
-        <div className="hero__badge">
-          Lead Gen &amp; Email Outreach, Done Right
-        </div>
+        <div className="hero__badge">Lead Gen &amp; Email Outreach, Done Right</div>
 
         <h1 className="hero__title">
-          <span className="hero__title-part hero__title-part--1">
-            Done-For-You
-          </span>
+          <span className="hero__title-part hero__title-part--1">Done-For-You</span>
           <br />
           <span className="hero__title-part hero__title-part--2">
             <span>B2B Outbound</span> Lead Generation
@@ -34,9 +47,8 @@ const Hero = () => {
         </h1>
 
         <p className="hero__description">
-          We build and run outbound systems that generate pipeline for B2B
-          teams. Clean data, on-brand copy, multi-channel, and inboxes that stay
-          healthy.
+          We build and run outbound systems that generate pipeline for B2B teams.
+          Clean data, on-brand copy, multi-channel, and inboxes that stay healthy.
         </p>
 
         <div className="hero__cta">
@@ -85,21 +97,14 @@ const Hero = () => {
         <p className="hero__trusted-title">Trusted by teams at</p>
 
         <div className="hero__trusted-box">
-          <div className="hero__logos-row">
-            <div className="hero__logo-card">
-              <img src={hk} alt="HK" />
-            </div>
-            <div className="hero__logo-card">
-              <img src={holistic} alt="Holistic" />
-            </div>
-            <div className="hero__logo-card">
-              <img src={stinger} alt="Stinger" />
-            </div>
-            <div className="hero__logo-card">
-              <img src={groveTech} alt="GroveTech" />
-            </div>
-            <div className="hero__logo-card">
-              <img src={toucon} alt="toucon" />
+          {/* Marquee wrapper */}
+          <div className="hero__logosMarquee" role="region" aria-label="Trusted by teams at">
+            <div className="hero__logosTrack">
+              {[...trustedLogos, ...trustedLogos].map((logo, idx) => (
+                <div className="hero__logo-card" key={`${logo.alt}-${idx}`}>
+                  <img src={logo.src} alt={logo.alt} loading="lazy" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -114,9 +119,7 @@ const Hero = () => {
             <FaClipboardCheck className="hero__metric-icon hero__metric-icon--clip" />
             <p className="hero__metric-number">200+</p>
             <p className="hero__metric-label">Projects delivered</p>
-            <p className="hero__metric-sub">
-              Across B2B SaaS, services &amp; e-com
-            </p>
+            <p className="hero__metric-sub">Across B2B SaaS, services &amp; e-com</p>
           </div>
 
           <div className="hero__metric-card">

@@ -255,12 +255,96 @@
   margin: 0 auto;
 }
 
-.hero__logos-row {
+/* .hero__logos-row {
   display: flex;
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
+} */
+
+
+/* ---------- Trusted logos marquee (right -> left) ---------- */
+
+.hero__logosMarquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 6px 2px;
 }
+
+/* soft edge fade */
+.hero__logosMarquee::before,
+.hero__logosMarquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 54px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero__logosMarquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #f9fafb 0%, rgba(249, 250, 251, 0) 100%);
+}
+
+.hero__logosMarquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #f9fafb 0%, rgba(249, 250, 251, 0) 100%);
+}
+
+.hero__logosTrack {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+  animation: heroLogosMarquee 28s linear infinite;
+  z-index: 1;
+}
+
+/* Pause when user hovers (nice UX) */
+.hero__logosMarquee:hover .hero__logosTrack {
+  animation-play-state: paused;
+}
+
+@keyframes heroLogosMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Make each logo card a fixed size for smooth scrolling */
+.hero__logo-card {
+  flex: 0 0 auto;
+  width: 190px; /* adjust if you want larger/smaller cards */
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+  .hero__logosTrack {
+    animation-duration: 22s;
+  }
+  .hero__logo-card {
+    width: 160px;
+  }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero__logosTrack {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .hero__logosMarquee {
+    overflow: visible;
+  }
+}
+
 
 .hero__logo-card {
   flex: 1 1 160px;
