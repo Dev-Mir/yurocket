@@ -13,7 +13,7 @@ import stinger from "./Clients/Stringer.png";
 import groveTech from "./Clients/GroveTech.png";
 import toucon from "./Clients/toucon.png";
 
-import wishpond from "./Clients/wishpond.png";
+// import wishpond from "./Clients/wishpond.png";
 import PBN from "./Clients/PBN.png";
 import WGL from "./Clients/WGL.png";
 
@@ -25,7 +25,7 @@ const trustedLogos = [
   { src: groveTech, alt: "GroveTech" },
   { src: toucon, alt: "Toucon" },
   
-  { src: wishpond, alt: "wishpond" },
+  // { src: wishpond, alt: "wishpond" },
   { src: PBN, alt: "PBN" },
   { src: WGL, alt: "WGL" },
   
